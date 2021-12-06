@@ -10,6 +10,7 @@
 		91108EAA275D917D00EACB6B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91108EAC275D917D00EACB6B /* Localization.strings */; };
 		9114E2E4275E829B005CBFCC /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */; };
 		9114E2E6275E8CA7005CBFCC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E5275E8CA7005CBFCC /* Colors.swift */; };
+		9114E2E8275E944D005CBFCC /* RedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */; };
 		91617CD8275D3A7500DDB972 /* SignUpSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */; };
 		91617CDA275D3A7500DDB972 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD9275D3A7500DDB972 /* SignUpView.swift */; };
 		91617CDC275D3A7800DDB972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91617CDB275D3A7800DDB972 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		91108EAD275D917F00EACB6B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localization.strings; sourceTree = "<group>"; };
 		9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
 		9114E2E5275E8CA7005CBFCC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButtonStyle.swift; sourceTree = "<group>"; };
 		91617CD4275D3A7500DDB972 /* SignUpSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSampleApp.swift; sourceTree = "<group>"; };
 		91617CD9275D3A7500DDB972 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		9114E2E2275E817A005CBFCC /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */,
 				9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */,
 			);
 			path = Controls;
@@ -524,6 +527,7 @@
 				91617CDA275D3A7500DDB972 /* SignUpView.swift in Sources */,
 				9114E2E6275E8CA7005CBFCC /* Colors.swift in Sources */,
 				9114E2E4275E829B005CBFCC /* RoundedTextFieldStyle.swift in Sources */,
+				9114E2E8275E944D005CBFCC /* RedButtonStyle.swift in Sources */,
 				91617D0E275D6CBD00DDB972 /* SignUpConfirmationView.swift in Sources */,
 				91617D09275D6BA500DDB972 /* SignUpViewModel.swift in Sources */,
 				91617CD8275D3A7500DDB972 /* SignUpSampleApp.swift in Sources */,
