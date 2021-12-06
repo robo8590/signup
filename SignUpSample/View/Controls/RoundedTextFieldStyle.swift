@@ -13,7 +13,7 @@ struct RoundedTextFieldStyle: TextFieldStyle {
         configuration
             .padding()
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 15)
                     .stroke(Color.lightGray, lineWidth: 2)
             )
     }
