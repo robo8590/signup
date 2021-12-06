@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91108EAA275D917D00EACB6B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91108EAC275D917D00EACB6B /* Localization.strings */; };
 		91617CD8275D3A7500DDB972 /* SignUpSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */; };
 		91617CDA275D3A7500DDB972 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD9275D3A7500DDB972 /* SignUpView.swift */; };
 		91617CDC275D3A7800DDB972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91617CDB275D3A7800DDB972 /* Assets.xcassets */; };
@@ -73,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91108EAB275D917D00EACB6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		91108EAD275D917F00EACB6B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localization.strings; sourceTree = "<group>"; };
 		91617CD4275D3A7500DDB972 /* SignUpSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSampleApp.swift; sourceTree = "<group>"; };
 		91617CD9275D3A7500DDB972 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -261,6 +264,7 @@
 		91617D0C275D6C3900DDB972 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				91108EAC275D917D00EACB6B /* Localization.strings */,
 				91617CDB275D3A7800DDB972 /* Assets.xcassets */,
 				91617CDD275D3A7800DDB972 /* Preview Content */,
 			);
@@ -435,6 +439,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 91617CCB275D3A7500DDB972;
 			productRefGroup = 91617CD5275D3A7500DDB972 /* Products */;
@@ -454,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91617D02275D4D5000DDB972 /* com.raywenderlich.swiftlint.yml in Resources */,
+				91108EAA275D917D00EACB6B /* Localization.strings in Resources */,
 				91617CDF275D3A7800DDB972 /* Preview Assets.xcassets in Resources */,
 				91617CDC275D3A7800DDB972 /* Assets.xcassets in Resources */,
 			);
@@ -575,6 +581,18 @@
 			targetProxy = 91617CEF275D3A7800DDB972 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		91108EAC275D917D00EACB6B /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91108EAB275D917D00EACB6B /* en */,
+				91108EAD275D917F00EACB6B /* vi */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		91617CF6275D3A7800DDB972 /* Debug */ = {
