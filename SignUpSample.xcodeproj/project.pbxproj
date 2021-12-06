@@ -8,13 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		91617CD8275D3A7500DDB972 /* SignUpSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */; };
-		91617CDA275D3A7500DDB972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD9275D3A7500DDB972 /* ContentView.swift */; };
+		91617CDA275D3A7500DDB972 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD9275D3A7500DDB972 /* SignUpView.swift */; };
 		91617CDC275D3A7800DDB972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91617CDB275D3A7800DDB972 /* Assets.xcassets */; };
 		91617CDF275D3A7800DDB972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91617CDE275D3A7800DDB972 /* Preview Assets.xcassets */; };
-		91617CE9275D3A7800DDB972 /* SignUpSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CE8275D3A7800DDB972 /* SignUpSampleTests.swift */; };
-		91617CF3275D3A7800DDB972 /* SignUpSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CF2275D3A7800DDB972 /* SignUpSampleUITests.swift */; };
-		91617CF5275D3A7800DDB972 /* SignUpSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CF4275D3A7800DDB972 /* SignUpSampleUITestsLaunchTests.swift */; };
 		91617D02275D4D5000DDB972 /* com.raywenderlich.swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 91617D01275D4D5000DDB972 /* com.raywenderlich.swiftlint.yml */; };
+		91617D09275D6BA500DDB972 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D08275D6BA500DDB972 /* SignUpViewModel.swift */; };
+		91617D0E275D6CBD00DDB972 /* SignUpConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D0D275D6CBD00DDB972 /* SignUpConfirmationView.swift */; };
+		91617D10275D6CF600DDB972 /* SignUpConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D0F275D6CF600DDB972 /* SignUpConfirmationViewModel.swift */; };
+		91617D12275D6D3200DDB972 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D11275D6D3200DDB972 /* NetworkStatus.swift */; };
+		91617D14275D6D4100DDB972 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D13275D6D4100DDB972 /* AccountService.swift */; };
+		91617D28275D71A900DDB972 /* MockAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D27275D71A900DDB972 /* MockAccountService.swift */; };
+		91617D2A275D71BF00DDB972 /* MockNetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D29275D71BF00DDB972 /* MockNetworkStatus.swift */; };
+		91617D2D275D7DE700DDB972 /* US1S1FirstNameIsOptinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D2C275D7DE700DDB972 /* US1S1FirstNameIsOptinalUITests.swift */; };
+		91617D2F275D804800DDB972 /* US1S2FirstNameLimits200CharsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D2E275D804800DDB972 /* US1S2FirstNameLimits200CharsUITests.swift */; };
+		91617D31275D807C00DDB972 /* US1S3EmailIsRequiredUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D30275D807C00DDB972 /* US1S3EmailIsRequiredUITests.swift */; };
+		91617D33275D80B100DDB972 /* US1S4EmailIsInvalidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D32275D80B100DDB972 /* US1S4EmailIsInvalidUITests.swift */; };
+		91617D35275D80E300DDB972 /* US1S5EmailIsValidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D34275D80E300DDB972 /* US1S5EmailIsValidUITests.swift */; };
+		91617D37275D814500DDB972 /* US1S6EmailLimits200CharsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D36275D814500DDB972 /* US1S6EmailLimits200CharsUITests.swift */; };
+		91617D39275D819A00DDB972 /* US1S7PasswordIsRequiredUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D38275D819A00DDB972 /* US1S7PasswordIsRequiredUITests.swift */; };
+		91617D3B275D820B00DDB972 /* US1S8PasswordIsInvalidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D3A275D820B00DDB972 /* US1S8PasswordIsInvalidUITests.swift */; };
+		91617D3D275D824D00DDB972 /* US1S9PasswordIsValidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D3C275D824D00DDB972 /* US1S9PasswordIsValidUITests.swift */; };
+		91617D3F275D82A800DDB972 /* US1S10PasswordLimits200CharsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D3E275D82A800DDB972 /* US1S10PasswordLimits200CharsUITests.swift */; };
+		91617D41275D82E000DDB972 /* US1S11WebsiteIsOptionalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D40275D82E000DDB972 /* US1S11WebsiteIsOptionalUITests.swift */; };
+		91617D43275D834000DDB972 /* US1S12WebsiteLimits200CharsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D42275D834000DDB972 /* US1S12WebsiteLimits200CharsUITests.swift */; };
+		91617D45275D837900DDB972 /* US1S13WebsiteIsInvalidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D44275D837900DDB972 /* US1S13WebsiteIsInvalidUITests.swift */; };
+		91617D47275D83E500DDB972 /* US1S14TermOfUseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D46275D83E500DDB972 /* US1S14TermOfUseUITests.swift */; };
+		91617D49275D842C00DDB972 /* US1S15EmailIsAlreadyInUseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D48275D842C00DDB972 /* US1S15EmailIsAlreadyInUseUITests.swift */; };
+		91617D4B275D847200DDB972 /* US1S16AccountCreatedSuccessfullyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D4A275D847200DDB972 /* US1S16AccountCreatedSuccessfullyUITests.swift */; };
+		91617D4D275D849E00DDB972 /* US1S17DeviceIsOfflineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D4C275D849E00DDB972 /* US1S17DeviceIsOfflineUITests.swift */; };
+		91617D60275D860C00DDB972 /* US1S8PasswordIsInvalidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D4F275D860C00DDB972 /* US1S8PasswordIsInvalidTests.swift */; };
+		91617D61275D860C00DDB972 /* US1S16AccountCreatedSuccessfullyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D50275D860C00DDB972 /* US1S16AccountCreatedSuccessfullyTests.swift */; };
+		91617D62275D860C00DDB972 /* US1S7PasswordIsRequiredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D51275D860C00DDB972 /* US1S7PasswordIsRequiredTests.swift */; };
+		91617D63275D860C00DDB972 /* US1S10PasswordLimits200CharsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D52275D860C00DDB972 /* US1S10PasswordLimits200CharsTests.swift */; };
+		91617D64275D860C00DDB972 /* US1S5EmailIsValidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D53275D860C00DDB972 /* US1S5EmailIsValidTests.swift */; };
+		91617D65275D860C00DDB972 /* US1S2FirstNameLimits200CharsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D54275D860C00DDB972 /* US1S2FirstNameLimits200CharsTests.swift */; };
+		91617D66275D860C00DDB972 /* US1S9PasswordIsValidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D55275D860C00DDB972 /* US1S9PasswordIsValidTests.swift */; };
+		91617D67275D860C00DDB972 /* US1S14TermOfUseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D56275D860C00DDB972 /* US1S14TermOfUseTests.swift */; };
+		91617D68275D860C00DDB972 /* US1S3EmailIsRequiredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D57275D860C00DDB972 /* US1S3EmailIsRequiredTests.swift */; };
+		91617D69275D860C00DDB972 /* US1S13WebsiteIsInvalidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D58275D860C00DDB972 /* US1S13WebsiteIsInvalidTests.swift */; };
+		91617D6A275D860C00DDB972 /* US1S11WebsiteIsOptionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D59275D860C00DDB972 /* US1S11WebsiteIsOptionalTests.swift */; };
+		91617D6B275D860C00DDB972 /* US1S4EmailIsInvalidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D5A275D860C00DDB972 /* US1S4EmailIsInvalidTests.swift */; };
+		91617D6C275D860C00DDB972 /* US1S6EmailLimits200CharsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D5B275D860C00DDB972 /* US1S6EmailLimits200CharsTests.swift */; };
+		91617D6D275D860C00DDB972 /* US1S12WebsiteLimits200CharsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D5C275D860C00DDB972 /* US1S12WebsiteLimits200CharsTests.swift */; };
+		91617D6E275D860C00DDB972 /* US1S1FirstNameIsOptinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D5D275D860C00DDB972 /* US1S1FirstNameIsOptinalTests.swift */; };
+		91617D6F275D860C00DDB972 /* US1S15EmailIsAlreadyInUseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D5E275D860C00DDB972 /* US1S15EmailIsAlreadyInUseTests.swift */; };
+		91617D70275D860C00DDB972 /* US1S17DeviceIsOfflineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617D5F275D860C00DDB972 /* US1S17DeviceIsOfflineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,15 +75,53 @@
 /* Begin PBXFileReference section */
 		91617CD4275D3A7500DDB972 /* SignUpSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSampleApp.swift; sourceTree = "<group>"; };
-		91617CD9275D3A7500DDB972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		91617CD9275D3A7500DDB972 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		91617CDB275D3A7800DDB972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91617CDE275D3A7800DDB972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91617CE4275D3A7800DDB972 /* SignUpSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignUpSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91617CE8275D3A7800DDB972 /* SignUpSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSampleTests.swift; sourceTree = "<group>"; };
 		91617CEE275D3A7800DDB972 /* SignUpSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignUpSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91617CF2275D3A7800DDB972 /* SignUpSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSampleUITests.swift; sourceTree = "<group>"; };
-		91617CF4275D3A7800DDB972 /* SignUpSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		91617D01275D4D5000DDB972 /* com.raywenderlich.swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = com.raywenderlich.swiftlint.yml; sourceTree = "<group>"; };
+		91617D08275D6BA500DDB972 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		91617D0D275D6CBD00DDB972 /* SignUpConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmationView.swift; sourceTree = "<group>"; };
+		91617D0F275D6CF600DDB972 /* SignUpConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmationViewModel.swift; sourceTree = "<group>"; };
+		91617D11275D6D3200DDB972 /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
+		91617D13275D6D4100DDB972 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		91617D27275D71A900DDB972 /* MockAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAccountService.swift; sourceTree = "<group>"; };
+		91617D29275D71BF00DDB972 /* MockNetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkStatus.swift; sourceTree = "<group>"; };
+		91617D2C275D7DE700DDB972 /* US1S1FirstNameIsOptinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S1FirstNameIsOptinalUITests.swift; sourceTree = "<group>"; };
+		91617D2E275D804800DDB972 /* US1S2FirstNameLimits200CharsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S2FirstNameLimits200CharsUITests.swift; sourceTree = "<group>"; };
+		91617D30275D807C00DDB972 /* US1S3EmailIsRequiredUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S3EmailIsRequiredUITests.swift; sourceTree = "<group>"; };
+		91617D32275D80B100DDB972 /* US1S4EmailIsInvalidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S4EmailIsInvalidUITests.swift; sourceTree = "<group>"; };
+		91617D34275D80E300DDB972 /* US1S5EmailIsValidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S5EmailIsValidUITests.swift; sourceTree = "<group>"; };
+		91617D36275D814500DDB972 /* US1S6EmailLimits200CharsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S6EmailLimits200CharsUITests.swift; sourceTree = "<group>"; };
+		91617D38275D819A00DDB972 /* US1S7PasswordIsRequiredUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S7PasswordIsRequiredUITests.swift; sourceTree = "<group>"; };
+		91617D3A275D820B00DDB972 /* US1S8PasswordIsInvalidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S8PasswordIsInvalidUITests.swift; sourceTree = "<group>"; };
+		91617D3C275D824D00DDB972 /* US1S9PasswordIsValidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S9PasswordIsValidUITests.swift; sourceTree = "<group>"; };
+		91617D3E275D82A800DDB972 /* US1S10PasswordLimits200CharsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S10PasswordLimits200CharsUITests.swift; sourceTree = "<group>"; };
+		91617D40275D82E000DDB972 /* US1S11WebsiteIsOptionalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S11WebsiteIsOptionalUITests.swift; sourceTree = "<group>"; };
+		91617D42275D834000DDB972 /* US1S12WebsiteLimits200CharsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S12WebsiteLimits200CharsUITests.swift; sourceTree = "<group>"; };
+		91617D44275D837900DDB972 /* US1S13WebsiteIsInvalidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S13WebsiteIsInvalidUITests.swift; sourceTree = "<group>"; };
+		91617D46275D83E500DDB972 /* US1S14TermOfUseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S14TermOfUseUITests.swift; sourceTree = "<group>"; };
+		91617D48275D842C00DDB972 /* US1S15EmailIsAlreadyInUseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S15EmailIsAlreadyInUseUITests.swift; sourceTree = "<group>"; };
+		91617D4A275D847200DDB972 /* US1S16AccountCreatedSuccessfullyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S16AccountCreatedSuccessfullyUITests.swift; sourceTree = "<group>"; };
+		91617D4C275D849E00DDB972 /* US1S17DeviceIsOfflineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1S17DeviceIsOfflineUITests.swift; sourceTree = "<group>"; };
+		91617D4F275D860C00DDB972 /* US1S8PasswordIsInvalidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S8PasswordIsInvalidTests.swift; sourceTree = "<group>"; };
+		91617D50275D860C00DDB972 /* US1S16AccountCreatedSuccessfullyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S16AccountCreatedSuccessfullyTests.swift; sourceTree = "<group>"; };
+		91617D51275D860C00DDB972 /* US1S7PasswordIsRequiredTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S7PasswordIsRequiredTests.swift; sourceTree = "<group>"; };
+		91617D52275D860C00DDB972 /* US1S10PasswordLimits200CharsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S10PasswordLimits200CharsTests.swift; sourceTree = "<group>"; };
+		91617D53275D860C00DDB972 /* US1S5EmailIsValidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S5EmailIsValidTests.swift; sourceTree = "<group>"; };
+		91617D54275D860C00DDB972 /* US1S2FirstNameLimits200CharsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S2FirstNameLimits200CharsTests.swift; sourceTree = "<group>"; };
+		91617D55275D860C00DDB972 /* US1S9PasswordIsValidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S9PasswordIsValidTests.swift; sourceTree = "<group>"; };
+		91617D56275D860C00DDB972 /* US1S14TermOfUseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S14TermOfUseTests.swift; sourceTree = "<group>"; };
+		91617D57275D860C00DDB972 /* US1S3EmailIsRequiredTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S3EmailIsRequiredTests.swift; sourceTree = "<group>"; };
+		91617D58275D860C00DDB972 /* US1S13WebsiteIsInvalidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S13WebsiteIsInvalidTests.swift; sourceTree = "<group>"; };
+		91617D59275D860C00DDB972 /* US1S11WebsiteIsOptionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S11WebsiteIsOptionalTests.swift; sourceTree = "<group>"; };
+		91617D5A275D860C00DDB972 /* US1S4EmailIsInvalidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S4EmailIsInvalidTests.swift; sourceTree = "<group>"; };
+		91617D5B275D860C00DDB972 /* US1S6EmailLimits200CharsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S6EmailLimits200CharsTests.swift; sourceTree = "<group>"; };
+		91617D5C275D860C00DDB972 /* US1S12WebsiteLimits200CharsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S12WebsiteLimits200CharsTests.swift; sourceTree = "<group>"; };
+		91617D5D275D860C00DDB972 /* US1S1FirstNameIsOptinalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S1FirstNameIsOptinalTests.swift; sourceTree = "<group>"; };
+		91617D5E275D860C00DDB972 /* US1S15EmailIsAlreadyInUseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S15EmailIsAlreadyInUseTests.swift; sourceTree = "<group>"; };
+		91617D5F275D860C00DDB972 /* US1S17DeviceIsOfflineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US1S17DeviceIsOfflineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */,
-				91617CD9275D3A7500DDB972 /* ContentView.swift */,
-				91617CDB275D3A7800DDB972 /* Assets.xcassets */,
-				91617CDD275D3A7800DDB972 /* Preview Content */,
+				91617D05275D69DD00DDB972 /* Model */,
+				91617D04275D69D300DDB972 /* View */,
+				91617D0C275D6C3900DDB972 /* Resource */,
 			);
 			path = SignUpSample;
 			sourceTree = "<group>";
@@ -116,7 +192,8 @@
 		91617CE7275D3A7800DDB972 /* SignUpSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				91617CE8275D3A7800DDB972 /* SignUpSampleTests.swift */,
+				91617D1F275D70DC00DDB972 /* Mock */,
+				91617D4E275D860B00DDB972 /* US1SignUp */,
 			);
 			path = SignUpSampleTests;
 			sourceTree = "<group>";
@@ -124,10 +201,151 @@
 		91617CF1275D3A7800DDB972 /* SignUpSampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				91617CF2275D3A7800DDB972 /* SignUpSampleUITests.swift */,
-				91617CF4275D3A7800DDB972 /* SignUpSampleUITestsLaunchTests.swift */,
+				91617D2B275D7A4300DDB972 /* US1SignUp */,
 			);
 			path = SignUpSampleUITests;
+			sourceTree = "<group>";
+		};
+		91617D04275D69D300DDB972 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91617D0A275D6BC000DDB972 /* SignUp */,
+				91617D0B275D6BEC00DDB972 /* SignUpConfirmation */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91617D05275D69DD00DDB972 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91617D06275D6AFF00DDB972 /* Common */,
+				91617D07275D6B0800DDB972 /* Service */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91617D06275D6AFF00DDB972 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				91617D11275D6D3200DDB972 /* NetworkStatus.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		91617D07275D6B0800DDB972 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				91617D13275D6D4100DDB972 /* AccountService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		91617D0A275D6BC000DDB972 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				91617CD9275D3A7500DDB972 /* SignUpView.swift */,
+				91617D08275D6BA500DDB972 /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		91617D0B275D6BEC00DDB972 /* SignUpConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				91617D0D275D6CBD00DDB972 /* SignUpConfirmationView.swift */,
+				91617D0F275D6CF600DDB972 /* SignUpConfirmationViewModel.swift */,
+			);
+			path = SignUpConfirmation;
+			sourceTree = "<group>";
+		};
+		91617D0C275D6C3900DDB972 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				91617CDB275D3A7800DDB972 /* Assets.xcassets */,
+				91617CDD275D3A7800DDB972 /* Preview Content */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		91617D1F275D70DC00DDB972 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				91617D20275D70E600DDB972 /* Model */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		91617D20275D70E600DDB972 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91617D22275D70F600DDB972 /* Common */,
+				91617D21275D70EE00DDB972 /* Service */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91617D21275D70EE00DDB972 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				91617D27275D71A900DDB972 /* MockAccountService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		91617D22275D70F600DDB972 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				91617D29275D71BF00DDB972 /* MockNetworkStatus.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		91617D2B275D7A4300DDB972 /* US1SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				91617D2C275D7DE700DDB972 /* US1S1FirstNameIsOptinalUITests.swift */,
+				91617D2E275D804800DDB972 /* US1S2FirstNameLimits200CharsUITests.swift */,
+				91617D30275D807C00DDB972 /* US1S3EmailIsRequiredUITests.swift */,
+				91617D32275D80B100DDB972 /* US1S4EmailIsInvalidUITests.swift */,
+				91617D34275D80E300DDB972 /* US1S5EmailIsValidUITests.swift */,
+				91617D36275D814500DDB972 /* US1S6EmailLimits200CharsUITests.swift */,
+				91617D38275D819A00DDB972 /* US1S7PasswordIsRequiredUITests.swift */,
+				91617D3A275D820B00DDB972 /* US1S8PasswordIsInvalidUITests.swift */,
+				91617D3C275D824D00DDB972 /* US1S9PasswordIsValidUITests.swift */,
+				91617D3E275D82A800DDB972 /* US1S10PasswordLimits200CharsUITests.swift */,
+				91617D40275D82E000DDB972 /* US1S11WebsiteIsOptionalUITests.swift */,
+				91617D42275D834000DDB972 /* US1S12WebsiteLimits200CharsUITests.swift */,
+				91617D44275D837900DDB972 /* US1S13WebsiteIsInvalidUITests.swift */,
+				91617D46275D83E500DDB972 /* US1S14TermOfUseUITests.swift */,
+				91617D48275D842C00DDB972 /* US1S15EmailIsAlreadyInUseUITests.swift */,
+				91617D4A275D847200DDB972 /* US1S16AccountCreatedSuccessfullyUITests.swift */,
+				91617D4C275D849E00DDB972 /* US1S17DeviceIsOfflineUITests.swift */,
+			);
+			path = US1SignUp;
+			sourceTree = "<group>";
+		};
+		91617D4E275D860B00DDB972 /* US1SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				91617D5D275D860C00DDB972 /* US1S1FirstNameIsOptinalTests.swift */,
+				91617D54275D860C00DDB972 /* US1S2FirstNameLimits200CharsTests.swift */,
+				91617D57275D860C00DDB972 /* US1S3EmailIsRequiredTests.swift */,
+				91617D5A275D860C00DDB972 /* US1S4EmailIsInvalidTests.swift */,
+				91617D53275D860C00DDB972 /* US1S5EmailIsValidTests.swift */,
+				91617D5B275D860C00DDB972 /* US1S6EmailLimits200CharsTests.swift */,
+				91617D51275D860C00DDB972 /* US1S7PasswordIsRequiredTests.swift */,
+				91617D4F275D860C00DDB972 /* US1S8PasswordIsInvalidTests.swift */,
+				91617D55275D860C00DDB972 /* US1S9PasswordIsValidTests.swift */,
+				91617D52275D860C00DDB972 /* US1S10PasswordLimits200CharsTests.swift */,
+				91617D59275D860C00DDB972 /* US1S11WebsiteIsOptionalTests.swift */,
+				91617D5C275D860C00DDB972 /* US1S12WebsiteLimits200CharsTests.swift */,
+				91617D58275D860C00DDB972 /* US1S13WebsiteIsInvalidTests.swift */,
+				91617D56275D860C00DDB972 /* US1S14TermOfUseTests.swift */,
+				91617D5E275D860C00DDB972 /* US1S15EmailIsAlreadyInUseTests.swift */,
+				91617D50275D860C00DDB972 /* US1S16AccountCreatedSuccessfullyTests.swift */,
+				91617D5F275D860C00DDB972 /* US1S17DeviceIsOfflineTests.swift */,
+			);
+			path = US1SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +501,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91617CDA275D3A7500DDB972 /* ContentView.swift in Sources */,
+				91617CDA275D3A7500DDB972 /* SignUpView.swift in Sources */,
+				91617D0E275D6CBD00DDB972 /* SignUpConfirmationView.swift in Sources */,
+				91617D09275D6BA500DDB972 /* SignUpViewModel.swift in Sources */,
 				91617CD8275D3A7500DDB972 /* SignUpSampleApp.swift in Sources */,
+				91617D14275D6D4100DDB972 /* AccountService.swift in Sources */,
+				91617D12275D6D3200DDB972 /* NetworkStatus.swift in Sources */,
+				91617D10275D6CF600DDB972 /* SignUpConfirmationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +515,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91617CE9275D3A7800DDB972 /* SignUpSampleTests.swift in Sources */,
+				91617D70275D860C00DDB972 /* US1S17DeviceIsOfflineTests.swift in Sources */,
+				91617D6A275D860C00DDB972 /* US1S11WebsiteIsOptionalTests.swift in Sources */,
+				91617D66275D860C00DDB972 /* US1S9PasswordIsValidTests.swift in Sources */,
+				91617D6F275D860C00DDB972 /* US1S15EmailIsAlreadyInUseTests.swift in Sources */,
+				91617D65275D860C00DDB972 /* US1S2FirstNameLimits200CharsTests.swift in Sources */,
+				91617D68275D860C00DDB972 /* US1S3EmailIsRequiredTests.swift in Sources */,
+				91617D64275D860C00DDB972 /* US1S5EmailIsValidTests.swift in Sources */,
+				91617D6B275D860C00DDB972 /* US1S4EmailIsInvalidTests.swift in Sources */,
+				91617D63275D860C00DDB972 /* US1S10PasswordLimits200CharsTests.swift in Sources */,
+				91617D2A275D71BF00DDB972 /* MockNetworkStatus.swift in Sources */,
+				91617D6C275D860C00DDB972 /* US1S6EmailLimits200CharsTests.swift in Sources */,
+				91617D67275D860C00DDB972 /* US1S14TermOfUseTests.swift in Sources */,
+				91617D60275D860C00DDB972 /* US1S8PasswordIsInvalidTests.swift in Sources */,
+				91617D6D275D860C00DDB972 /* US1S12WebsiteLimits200CharsTests.swift in Sources */,
+				91617D61275D860C00DDB972 /* US1S16AccountCreatedSuccessfullyTests.swift in Sources */,
+				91617D28275D71A900DDB972 /* MockAccountService.swift in Sources */,
+				91617D62275D860C00DDB972 /* US1S7PasswordIsRequiredTests.swift in Sources */,
+				91617D6E275D860C00DDB972 /* US1S1FirstNameIsOptinalTests.swift in Sources */,
+				91617D69275D860C00DDB972 /* US1S13WebsiteIsInvalidTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,8 +541,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91617CF5275D3A7800DDB972 /* SignUpSampleUITestsLaunchTests.swift in Sources */,
-				91617CF3275D3A7800DDB972 /* SignUpSampleUITests.swift in Sources */,
+				91617D31275D807C00DDB972 /* US1S3EmailIsRequiredUITests.swift in Sources */,
+				91617D2F275D804800DDB972 /* US1S2FirstNameLimits200CharsUITests.swift in Sources */,
+				91617D2D275D7DE700DDB972 /* US1S1FirstNameIsOptinalUITests.swift in Sources */,
+				91617D4D275D849E00DDB972 /* US1S17DeviceIsOfflineUITests.swift in Sources */,
+				91617D47275D83E500DDB972 /* US1S14TermOfUseUITests.swift in Sources */,
+				91617D49275D842C00DDB972 /* US1S15EmailIsAlreadyInUseUITests.swift in Sources */,
+				91617D43275D834000DDB972 /* US1S12WebsiteLimits200CharsUITests.swift in Sources */,
+				91617D39275D819A00DDB972 /* US1S7PasswordIsRequiredUITests.swift in Sources */,
+				91617D3D275D824D00DDB972 /* US1S9PasswordIsValidUITests.swift in Sources */,
+				91617D45275D837900DDB972 /* US1S13WebsiteIsInvalidUITests.swift in Sources */,
+				91617D41275D82E000DDB972 /* US1S11WebsiteIsOptionalUITests.swift in Sources */,
+				91617D3B275D820B00DDB972 /* US1S8PasswordIsInvalidUITests.swift in Sources */,
+				91617D37275D814500DDB972 /* US1S6EmailLimits200CharsUITests.swift in Sources */,
+				91617D33275D80B100DDB972 /* US1S4EmailIsInvalidUITests.swift in Sources */,
+				91617D3F275D82A800DDB972 /* US1S10PasswordLimits200CharsUITests.swift in Sources */,
+				91617D4B275D847200DDB972 /* US1S16AccountCreatedSuccessfullyUITests.swift in Sources */,
+				91617D35275D80E300DDB972 /* US1S5EmailIsValidUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +700,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SignUpSample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SignUpSample/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = 66H5658B83;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -473,7 +729,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SignUpSample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SignUpSample/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = 66H5658B83;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
