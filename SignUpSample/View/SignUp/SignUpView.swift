@@ -67,10 +67,12 @@ extension SignUpView {
 extension SignUpView {
     var firstNameTextField: some View {
         ZStack(alignment: .leading) {
-            Text("SignUpView.FirstNameTextField.Title")
-                .fontWeight(.medium)
-                .foregroundColor(.darkGray)
-                .padding()
+            if viewModel.firstName.isEmpty {
+                Text("SignUpView.FirstNameTextField.Title")
+                    .fontWeight(.medium)
+                    .foregroundColor(.darkGray)
+                    .padding()
+            }
             TextField("", text: $viewModel.firstName)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
@@ -86,10 +88,12 @@ extension SignUpView {
 
     var emailTextField: some View {
         ZStack(alignment: .leading) {
-            Text("SignUpView.EmailTextField.Title")
-                .fontWeight(.medium)
-                .foregroundColor(.darkGray)
-                .padding()
+            if viewModel.email.isEmpty {
+                Text("SignUpView.EmailTextField.Title")
+                    .fontWeight(.medium)
+                    .foregroundColor(.darkGray)
+                    .padding()
+            }
             TextField("", text: $viewModel.email)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
