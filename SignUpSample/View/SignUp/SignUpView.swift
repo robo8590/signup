@@ -76,13 +76,19 @@ extension SignUpView {
             TextField("", text: $viewModel.firstName)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
-                .onSubmit(viewModel.next)
+                .onSubmit(next)
                 .focused($focusedField, equals: .firstName)
                 .task {
                     await Task.sleep(100_000_000)
                     focusedField = .firstName
                 }
         }
+        .transition(
+            .asymmetric(
+                insertion: .opacity.combined(with: .move(edge: .trailing)),
+                removal: .opacity.combined(with: .move(edge: .leading))
+            )
+        )
         .padding(.top)
     }
 
@@ -97,12 +103,18 @@ extension SignUpView {
             TextField("", text: $viewModel.email)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
-                .onSubmit(viewModel.next)
+                .onSubmit(next)
                 .focused($focusedField, equals: .email)
                 .task {
                     focusedField = .email
                 }
         }
+        .transition(
+            .asymmetric(
+                insertion: .opacity.combined(with: .move(edge: .trailing)),
+                removal: .opacity.combined(with: .move(edge: .leading))
+            )
+        )
         .padding(.top)
     }
 }
@@ -111,13 +123,21 @@ extension SignUpView {
     var nextButton: some View {
         HStack {
             Spacer()
-            Button(action: viewModel.next) {
+            Button(action: next) {
                 Text("SignUpView.NextButton.Title")
                     .fontWeight(.semibold)
                     .padding(.horizontal)
             }
             .disabled(!viewModel.isCurrentInputValid)
             .buttonStyle(RedButtonStyle())
+        }
+    }
+}
+// MARK: - Actions
+extension SignUpView {
+    func next() {
+        withAnimation {
+            viewModel.next()
         }
     }
 }
