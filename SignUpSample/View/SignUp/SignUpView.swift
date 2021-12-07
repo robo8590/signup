@@ -37,7 +37,7 @@ struct SignUpView: View {
                     nextButton
                 }
             }
-            .padding(.horizontal)
+            .padding()
             .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -114,7 +114,6 @@ extension SignUpView {
             }
             .disabled(!viewModel.isCurrentInputValid)
             .buttonStyle(RedButtonStyle())
-            .padding(.bottom)
         }
     }
 }
