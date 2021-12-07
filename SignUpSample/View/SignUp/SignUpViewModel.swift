@@ -19,8 +19,6 @@ enum SignUpStep {
 class SignUpViewModel: ObservableObject {
     /// The current step of sign up process
     @Published var currentStep: SignUpStep = .enteringFirstName
-    /// The state of the next button
-    @Published var isNextButtonEnabled = true
     /// The first name of the user
     @Published var firstName: String = ""
     /// The email of the user
@@ -60,7 +58,7 @@ extension SignUpViewModel {
 extension SignUpViewModel {
     /// Go to the next step of sign up process
     func next() {
-        guard isNextButtonEnabled else {
+        guard isCurrentInputValid else {
             return
         }
         switch currentStep {
@@ -69,6 +67,5 @@ extension SignUpViewModel {
         case .enteringEmail:
             break
         }
-        isNextButtonEnabled = isCurrentInputValid
     }
 }

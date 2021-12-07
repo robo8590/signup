@@ -33,13 +33,13 @@ class US1S1FirstNameIsOptinalTests: XCTestCase {
         // Given
         XCTAssertEqual(viewModel.currentStep, .enteringFirstName)
         XCTAssertEqual(viewModel.firstName, "")
-        XCTAssertEqual(viewModel.isNextButtonEnabled, true)
+        XCTAssertEqual(viewModel.isCurrentInputValid, true)
 
         // When
         viewModel.next()
 
         // Then
         XCTAssertEqual(viewModel.currentStep, .enteringEmail)
-        XCTAssertEqual(viewModel.isNextButtonEnabled, false)
+        XCTAssertEqual(viewModel.isCurrentInputValid, false)
     }
 }
