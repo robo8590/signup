@@ -11,7 +11,7 @@ import SwiftUI
 struct SignUpSampleApp: App {
     var body: some Scene {
         WindowGroup {
-            SignUpView()
+            SignUpView(viewModel: SignUpViewModel())
         }
     }
 }
