@@ -50,6 +50,7 @@ extension SignUpView {
             Text("SignUpView.Title")
                 .font(.system(size: 40, weight: .bold))
                 .foregroundColor(.darkGray)
+                .accessibilityIdentifier("TitleLabel")
             Spacer()
         }
     }
@@ -61,6 +62,7 @@ extension SignUpView {
             .foregroundColor(.gray)
             .fontWeight(.medium)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityIdentifier("InstructionLabel")
     }
 }
 // MARK: - Input fields
@@ -72,10 +74,12 @@ extension SignUpView {
                     .fontWeight(.medium)
                     .foregroundColor(.darkGray)
                     .padding()
+                    .accessibilityIdentifier("FirstNameLabel")
             }
             TextField("", text: $viewModel.firstName)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
+                .accessibilityIdentifier("FirstNameField")
                 .onSubmit(next)
                 .focused($focusedField, equals: .firstName)
                 .task {
@@ -99,10 +103,12 @@ extension SignUpView {
                     .fontWeight(.medium)
                     .foregroundColor(.darkGray)
                     .padding()
+                    .accessibilityIdentifier("EmailLabel")
             }
             TextField("", text: $viewModel.email)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
+                .accessibilityIdentifier("EmailField")
                 .onSubmit(next)
                 .focused($focusedField, equals: .email)
                 .task {
@@ -130,6 +136,7 @@ extension SignUpView {
             }
             .disabled(!viewModel.isCurrentInputValid)
             .buttonStyle(RedButtonStyle())
+            .accessibilityIdentifier("NextButton")
         }
     }
 }
