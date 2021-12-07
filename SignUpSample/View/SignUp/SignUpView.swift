@@ -7,10 +7,19 @@
 
 import SwiftUI
 
+// MARK: - Field
+enum SignUpField: Hashable {
+    case firstName
+    case email
+}
 // MARK: - Layout
+/// The sign up view object
 struct SignUpView: View {
     /// The view model object
     @ObservedObject var viewModel: SignUpViewModel
+
+    /// The focused field
+    @FocusState private var focusedField: SignUpField?
 
     var body: some View {
         NavigationView {
@@ -66,6 +75,11 @@ extension SignUpView {
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
                 .onSubmit(viewModel.next)
+                .focused($focusedField, equals: .firstName)
+                .task {
+                    await Task.sleep(100_000_000)
+                    focusedField = .firstName
+                }
         }
         .padding(.top)
     }
@@ -80,6 +94,10 @@ extension SignUpView {
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
                 .onSubmit(viewModel.next)
+                .focused($focusedField, equals: .email)
+                .task {
+                    focusedField = .email
+                }
         }
         .padding(.top)
     }
