@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		91108EAA275D917D00EACB6B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91108EAC275D917D00EACB6B /* Localization.strings */; };
+		91108EAA275D917D00EACB6B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91108EAC275D917D00EACB6B /* Localizable.strings */; };
 		9114E2E4275E829B005CBFCC /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */; };
 		9114E2E6275E8CA7005CBFCC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E5275E8CA7005CBFCC /* Colors.swift */; };
 		9114E2E8275E944D005CBFCC /* RedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */; };
@@ -77,8 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		91108EAB275D917D00EACB6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
-		91108EAD275D917F00EACB6B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localization.strings; sourceTree = "<group>"; };
+		91108EAB275D917D00EACB6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		91108EAD275D917F00EACB6B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
 		9114E2E5275E8CA7005CBFCC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButtonStyle.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				9114E2E5275E8CA7005CBFCC /* Colors.swift */,
-				91108EAC275D917D00EACB6B /* Localization.strings */,
+				91108EAC275D917D00EACB6B /* Localizable.strings */,
 				91617CDB275D3A7800DDB972 /* Assets.xcassets */,
 				91617CDD275D3A7800DDB972 /* Preview Content */,
 			);
@@ -476,7 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91617D02275D4D5000DDB972 /* com.raywenderlich.swiftlint.yml in Resources */,
-				91108EAA275D917D00EACB6B /* Localization.strings in Resources */,
+				91108EAA275D917D00EACB6B /* Localizable.strings in Resources */,
 				91617CDF275D3A7800DDB972 /* Preview Assets.xcassets in Resources */,
 				91617CDC275D3A7800DDB972 /* Assets.xcassets in Resources */,
 			);
@@ -603,13 +603,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		91108EAC275D917D00EACB6B /* Localization.strings */ = {
+		91108EAC275D917D00EACB6B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				91108EAB275D917D00EACB6B /* en */,
 				91108EAD275D917F00EACB6B /* vi */,
 			);
-			name = Localization.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

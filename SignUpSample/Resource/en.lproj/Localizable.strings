@@ -1,0 +1,13 @@
+/* 
+  Localization.strings
+  SignUpSample
+
+  Created by Nam Tran on 12/5/21.
+  
+*/
+// SignUpView
+"SignUpView.Title" = "Profile Creation";
+"SignUpView.Instruction" = "Use the form below to submit your portfolio. An email and password are required.";
+"SignUpView.FirstNameTextField.Title" = "First Name";
+"SignUpView.EmailTextField.Title" = "Email";
+"SignUpView.NextButton.Title" = "Next";

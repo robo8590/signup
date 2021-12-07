@@ -1,0 +1,12 @@
+/* 
+  Localization.strings
+  SignUpSample
+
+  Created by Nam Tran on 12/5/21.
+  
+*/
+"SignUpView.Title" = "Tạo tài khoản";
+"SignUpView.Instruction" = "Sử dụng biểu mẫu dưới đây để tạo hồ sơ của bạn. Thư điện tử và mật khẩu là trường bắt buộc.";
+"SignUpView.FirstNameTextField.Title" = "Tên";
+"SignUpView.EmailTextField.Title" = "Thư điện tử";
+"SignUpView.NextButton.Title" = "Tiếp";
