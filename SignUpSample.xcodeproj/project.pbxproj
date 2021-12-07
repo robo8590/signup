@@ -11,6 +11,7 @@
 		9114E2E4275E829B005CBFCC /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */; };
 		9114E2E6275E8CA7005CBFCC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E5275E8CA7005CBFCC /* Colors.swift */; };
 		9114E2E8275E944D005CBFCC /* RedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */; };
+		913A84102760177E00E5BF90 /* US1SignUpXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A840F2760177E00E5BF90 /* US1SignUpXCTestCase.swift */; };
 		91617CD8275D3A7500DDB972 /* SignUpSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */; };
 		91617CDA275D3A7500DDB972 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD9275D3A7500DDB972 /* SignUpView.swift */; };
 		91617CDC275D3A7800DDB972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91617CDB275D3A7800DDB972 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
 		9114E2E5275E8CA7005CBFCC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButtonStyle.swift; sourceTree = "<group>"; };
+		913A840F2760177E00E5BF90 /* US1SignUpXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1SignUpXCTestCase.swift; sourceTree = "<group>"; };
 		91617CD4275D3A7500DDB972 /* SignUpSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSampleApp.swift; sourceTree = "<group>"; };
 		91617CD9275D3A7500DDB972 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		91617D2B275D7A4300DDB972 /* US1SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				913A840F2760177E00E5BF90 /* US1SignUpXCTestCase.swift */,
 				91617D2C275D7DE700DDB972 /* US1S1FirstNameIsOptinalUITests.swift */,
 				91617D2E275D804800DDB972 /* US1S2FirstNameLimits200CharsUITests.swift */,
 				91617D30275D807C00DDB972 /* US1S3EmailIsRequiredUITests.swift */,
@@ -577,6 +580,7 @@
 				91617D39275D819A00DDB972 /* US1S7PasswordIsRequiredUITests.swift in Sources */,
 				91617D3D275D824D00DDB972 /* US1S9PasswordIsValidUITests.swift in Sources */,
 				91617D45275D837900DDB972 /* US1S13WebsiteIsInvalidUITests.swift in Sources */,
+				913A84102760177E00E5BF90 /* US1SignUpXCTestCase.swift in Sources */,
 				91617D41275D82E000DDB972 /* US1S11WebsiteIsOptionalUITests.swift in Sources */,
 				91617D3B275D820B00DDB972 /* US1S8PasswordIsInvalidUITests.swift in Sources */,
 				91617D37275D814500DDB972 /* US1S6EmailLimits200CharsUITests.swift in Sources */,

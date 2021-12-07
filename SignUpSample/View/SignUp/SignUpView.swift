@@ -86,6 +86,9 @@ extension SignUpView {
                     await Task.sleep(100_000_000)
                     focusedField = .firstName
                 }
+                .onChange(of: viewModel.firstName) { _ in
+                    viewModel.trimFirstNameIfNeeded()
+                }
         }
         .transition(
             .asymmetric(

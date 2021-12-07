@@ -27,6 +27,9 @@ class SignUpViewModel: ObservableObject {
 
 // MARK: - Input Validation
 extension SignUpViewModel {
+    /// The maximum character
+    static let maxChars = 200
+
     /// Checks the current input is valid or not
     var isCurrentInputValid: Bool {
         switch currentStep {
@@ -42,7 +45,7 @@ extension SignUpViewModel {
         guard !firstName.isEmpty else {
             return true
         }
-        return true
+        return firstName.count <= SignUpViewModel.maxChars
     }
 
     /// Checks the email is valid or not
@@ -51,6 +54,13 @@ extension SignUpViewModel {
             return false
         }
         return true
+    }
+
+    /// Trim the first name if it exceed the maximum characters
+    func trimFirstNameIfNeeded() {
+        if firstName.count > SignUpViewModel.maxChars {
+            firstName = String(firstName.prefix(SignUpViewModel.maxChars))
+        }
     }
 }
 

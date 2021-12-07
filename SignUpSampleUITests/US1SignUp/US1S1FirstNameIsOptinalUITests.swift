@@ -24,35 +24,7 @@
 
 import XCTest
 
-// swiftlint:disable implicitly_unwrapped_optional
-class US1S1FirstNameIsOptinalUITests: XCTestCase {
-    var app: XCUIApplication!
-    var titleLabel: XCUIElement!
-    var instructionLabel: XCUIElement!
-    var firstNameLabel: XCUIElement!
-    var firstNameField: XCUIElement!
-    var emailLabel: XCUIElement!
-    var emailField: XCUIElement!
-    var nextButton: XCUIElement!
-
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-
-        continueAfterFailure = false
-
-        app = XCUIApplication()
-        app.launchArguments = ["testing"]
-        app.launch()
-
-        titleLabel = app.staticTexts["TitleLabel"]
-        instructionLabel = app.staticTexts["InstructionLabel"]
-        firstNameLabel = app.staticTexts["FirstNameLabel"]
-        firstNameField = app.textFields["FirstNameField"]
-        emailLabel = app.staticTexts["EmailLabel"]
-        emailField = app.textFields["EmailField"]
-        nextButton = app.buttons["NextButton"]
-    }
-
+class US1S1FirstNameIsOptinalUITests: US1SignUpXCTestCase {
     func testScenario() throws {
         // Given
         XCTAssertTrue(titleLabel.exists)
