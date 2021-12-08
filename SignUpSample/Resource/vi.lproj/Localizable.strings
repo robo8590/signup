@@ -10,5 +10,6 @@
 "SignUpView.Instruction" = "Sử dụng biểu mẫu dưới đây để tạo hồ sơ của bạn. Thư điện tử và mật khẩu là trường bắt buộc.";
 "SignUpView.FirstNameTextField.Title" = "Tên";
 "SignUpView.EmailTextField.Title" = "Thư điện tử";
+"SignUpView.PasswordField.Title" = "Mật khẩu";
 "SignUpView.NextButton.Title" = "Tiếp";
 "SignUpView.EmailIsInvalid" = "Thư điện tử của bạn không hợp lệ.";

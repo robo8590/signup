@@ -11,6 +11,7 @@ import SwiftUI
 enum SignUpField: Hashable {
     case firstName
     case email
+    case password
 }
 // MARK: - Layout
 /// The sign up view object
@@ -33,6 +34,13 @@ struct SignUpView: View {
                     nextButton
                 case .enteringEmail:
                     emailTextField
+                    if viewModel.currentError != nil {
+                        errorText
+                    }
+                    Spacer()
+                    nextButton
+                case .enteringPassword:
+                    passwordTextField
                     if viewModel.currentError != nil {
                         errorText
                     }
@@ -68,7 +76,7 @@ extension SignUpView {
             .accessibilityIdentifier("InstructionLabel")
     }
 }
-// MARK: - Input fields
+// MARK: - First Name Field
 extension SignUpView {
     var firstNameTextField: some View {
         ZStack(alignment: .leading) {
@@ -101,7 +109,9 @@ extension SignUpView {
         )
         .padding(.top)
     }
-
+}
+// MARK: - Email Field
+extension SignUpView {
     var emailTextField: some View {
         ZStack(alignment: .leading) {
             if viewModel.email.isEmpty {
@@ -123,6 +133,39 @@ extension SignUpView {
                 }
                 .onChange(of: viewModel.email) { _ in
                     viewModel.handleEmailOnChange()
+                }
+        }
+        .transition(
+            .asymmetric(
+                insertion: .opacity.combined(with: .move(edge: .trailing)),
+                removal: .opacity.combined(with: .move(edge: .leading))
+            )
+        )
+        .padding(.top)
+    }
+}
+// MARK: - Password Field
+extension SignUpView {
+    var passwordTextField: some View {
+        ZStack(alignment: .leading) {
+            if viewModel.password.isEmpty {
+                Text("SignUpView.PasswordField.Title")
+                    .fontWeight(.medium)
+                    .foregroundColor(.darkGray)
+                    .padding()
+                    .accessibilityIdentifier("PasswordLabel")
+            }
+            SecureField("", text: $viewModel.password)
+                .textFieldStyle(RoundedTextFieldStyle())
+                .submitLabel(.next)
+                .accessibilityIdentifier("PasswordField")
+                .onSubmit(next)
+                .focused($focusedField, equals: .password)
+                .task {
+                    focusedField = .password
+                }
+                .onChange(of: viewModel.password) { _ in
+                    viewModel.handlePasswordOnChange()
                 }
         }
         .transition(

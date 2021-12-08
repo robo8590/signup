@@ -10,5 +10,6 @@
 "SignUpView.Instruction" = "Use the form below to submit your portfolio. An email and password are required.";
 "SignUpView.FirstNameTextField.Title" = "First Name";
 "SignUpView.EmailTextField.Title" = "Email";
+"SignUpView.PasswordField.Title" = "Password";
 "SignUpView.NextButton.Title" = "Next";
 "SignUpView.EmailIsInvalid" = "The email is invalid.";

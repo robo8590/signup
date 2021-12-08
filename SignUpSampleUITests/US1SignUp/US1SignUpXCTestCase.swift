@@ -22,6 +22,8 @@ class US1SignUpXCTestCase: XCTestCase {
     var firstNameField: XCUIElement!
     var emailLabel: XCUIElement!
     var emailField: XCUIElement!
+    var passwordLabel: XCUIElement!
+    var passwordField: XCUIElement!
     var nextButton: XCUIElement!
     var errorLabel: XCUIElement!
 
@@ -40,6 +42,8 @@ class US1SignUpXCTestCase: XCTestCase {
         firstNameField = app.textFields["FirstNameField"]
         emailLabel = app.staticTexts["EmailLabel"]
         emailField = app.textFields["EmailField"]
+        passwordLabel = app.staticTexts["PasswordLabel"]
+        passwordField = app.secureTextFields["PasswordField"]
         nextButton = app.buttons["NextButton"]
         errorLabel = app.staticTexts["ErrorLabel"]
     }

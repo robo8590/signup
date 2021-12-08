@@ -12,6 +12,7 @@ import Foundation
 enum SignUpStep {
     case enteringFirstName
     case enteringEmail
+    case enteringPassword
 }
 
 // MARK: - Define the errors
@@ -34,6 +35,8 @@ class SignUpViewModel: ObservableObject {
     @Published var firstName: String = ""
     /// The email of the user
     @Published var email: String = ""
+    /// The password of the user
+    @Published var password: String = ""
     /// The current error of process
     @Published var currentError: SignUpError?
 }
@@ -53,6 +56,8 @@ extension SignUpViewModel {
             return isFirstNameValid
         case .enteringEmail:
             return isEmailValid
+        case .enteringPassword:
+            return false
         }
     }
 
@@ -92,14 +97,18 @@ extension SignUpViewModel {
         case .enteringFirstName:
             currentStep = .enteringEmail
         case .enteringEmail:
+            currentStep = .enteringPassword
+        case .enteringPassword:
             break
         }
     }
 
     /// Handle event the user is entering the email
     func handleEmailOnChange() {
-        if !isEmailValid {
-            currentError = .emailIsInvalid
-        }
+        currentError = isEmailValid ? nil : .emailIsInvalid
+    }
+
+    /// Handle event the user is entering the password
+    func handlePasswordOnChange() {
     }
 }
