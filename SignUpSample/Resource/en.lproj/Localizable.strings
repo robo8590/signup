@@ -13,3 +13,4 @@
 "SignUpView.PasswordField.Title" = "Password";
 "SignUpView.NextButton.Title" = "Next";
 "SignUpView.EmailIsInvalid" = "The email is invalid.";
+"SignUpView.PasswordIsInvalid" = "The password must have 6 to 200 characters, 1 lowercase, 1 uppercase and 1 special character.";

@@ -49,6 +49,9 @@ extension SignUpViewModel {
     /// The regular expression for email
     static let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
+    /// The regular expression for password
+    static let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{6,200}$"
+
     /// Checks the current input is valid or not
     var isCurrentInputValid: Bool {
         switch currentStep {
@@ -86,7 +89,8 @@ extension SignUpViewModel {
         guard !password.isEmpty else {
             return false
         }
-        return true
+        let predicate = NSPredicate(format: "SELF MATCHES %@", SignUpViewModel.passwordRegex)
+        return predicate.evaluate(with: password)
     }
 
     /// Trim the first name if it exceed the maximum characters
@@ -129,5 +133,6 @@ extension SignUpViewModel {
 
     /// Handle event the user is entering the password
     func handlePasswordOnChange() {
+        currentError = isPasswordValid ? nil : .passwordIsInvalid
     }
 }

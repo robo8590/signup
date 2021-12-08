@@ -190,6 +190,8 @@ extension SignUpView {
         switch viewModel.currentError {
         case .emailIsInvalid:
             return "SignUpView.EmailIsInvalid"
+        case .passwordIsInvalid:
+            return "SignUpView.PasswordIsInvalid"
         default:
             return ""
         }
