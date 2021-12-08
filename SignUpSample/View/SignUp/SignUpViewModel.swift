@@ -57,7 +57,7 @@ extension SignUpViewModel {
         case .enteringEmail:
             return isEmailValid
         case .enteringPassword:
-            return false
+            return isPasswordValid
         }
     }
 
@@ -79,6 +79,14 @@ extension SignUpViewModel {
         }
         let predicate = NSPredicate(format: "SELF MATCHES %@", SignUpViewModel.emailRegex)
         return predicate.evaluate(with: email)
+    }
+
+    /// Checks the password is valid or not
+    var isPasswordValid: Bool {
+        guard !password.isEmpty else {
+            return false
+        }
+        return true
     }
 
     /// Trim the first name if it exceed the maximum characters
