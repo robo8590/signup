@@ -116,6 +116,13 @@ extension SignUpViewModel {
             email = String(email.prefix(SignUpViewModel.maxChars))
         }
     }
+
+    /// Trim the password if it exceed the maximum characters
+    func trimPasswordIfNeeded() {
+        if password.count > SignUpViewModel.maxChars {
+            password = String(password.prefix(SignUpViewModel.maxChars))
+        }
+    }
 }
 
 // MARK: - Actions
@@ -145,6 +152,7 @@ extension SignUpViewModel {
 
     /// Handle event the user is entering the password
     func handlePasswordOnChange() {
+        trimPasswordIfNeeded()
         currentError = isPasswordValid ? nil : .passwordIsInvalid
     }
 

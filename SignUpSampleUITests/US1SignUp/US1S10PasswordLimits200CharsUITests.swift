@@ -4,30 +4,48 @@
 //
 //  Created by Nam Tran on 12/5/21.
 //
+//
+//  US1 - User story 1 : Sign Up
+//
+//  As a guest user,
+//  I want to create my account
+//  so that I can login to the system.
+//
+//  Entering the password
+//
+//  US1-S10 - Scenario 10: The password limits 200 characters.
+//
+//  Given I started the sign up wizard
+//  and I went to the step to enter the password
+//  and the password field was focused on
+//  and the keyboard was presented
+//  when I enter more than 200 characters
+//  then the password field only accepts 200 characters.
+//
 
 import XCTest
 
-class US1S10PasswordLimits200CharsUITests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class US1S10PasswordLimits200CharsUITests: US1SignUpXCTestCase {
+    func testScenario() throws {
+        // Given
+        firstNameField.typeText("Nam")
+        nextButton.tap()
+        emailField.typeText("robo8590@gmail.com")
+        nextButton.tap()
+        XCTAssertTrue(passwordField.exists)
+        XCTAssertEqual(passwordField.value as? String, "")
+        XCTAssertEqual(passwordField.value(forKey: "hasKeyboardFocus") as? Bool, true)
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+        // When
+        let input = "Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam"
+        + "Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!NamNam!Nam!Na"
+        + "Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!Nam!NamNam!Nam!Na"
+        passwordField.typeText(input)
 
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Then
+        XCTAssertFalse(errorLabel.exists)
+        XCTAssertEqual((passwordField.value as? String)?.count, 200)
+        XCTAssertTrue(nextButton.exists)
+        XCTAssertTrue(nextButton.isEnabled)
     }
 }
