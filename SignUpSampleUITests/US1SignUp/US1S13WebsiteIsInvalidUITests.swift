@@ -7,27 +7,55 @@
 
 import XCTest
 
-class US1S13WebsiteIsInvalidUITests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class US1S13WebsiteIsInvalidUITests: US1SignUpXCTestCase {
+    func testScenario() throws {
+        // Given
+        firstNameField.typeText("Nam")
+        nextButton.tap()
+        emailField.typeText("robo8590@gmail.com")
+        nextButton.tap()
+        passwordField.typeText("Nam123!")
+        nextButton.tap()
+        XCTAssertTrue(websiteLabel.exists)
+        XCTAssertTrue(websiteField.exists)
+        XCTAssertEqual(websiteField.value as? String, "")
+        XCTAssertEqual(websiteField.value(forKey: "hasKeyboardFocus") as? Bool, true)
+        XCTAssertTrue(nextButton.exists)
+        XCTAssertTrue(nextButton.isEnabled)
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+        // When
+        websiteField.typeText("abc")
 
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        // Then
+        let errorMessage = "The website is invalid."
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, errorMessage)
+        XCTAssertFalse(nextButton.isEnabled)
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
+        // When
+        websiteField.clearText()
+        websiteField.typeText("http://")
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        // Then
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, errorMessage)
+        XCTAssertFalse(nextButton.isEnabled)
 
-    func testExample() throws {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // When
+        websiteField.clearText()
+        websiteField.typeText("www.linkedin.com")
+
+        // Then
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, errorMessage)
+        XCTAssertFalse(nextButton.isEnabled)
+
+        // When
+        websiteField.clearText()
+        websiteField.typeText("http://www.linkedin.com/in/robo8590")
+
+        // Then
+        XCTAssertFalse(errorLabel.exists)
+        XCTAssertTrue(nextButton.isEnabled)
     }
 }

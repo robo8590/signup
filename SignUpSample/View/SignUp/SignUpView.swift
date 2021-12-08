@@ -249,6 +249,8 @@ extension SignUpView {
             return "SignUpView.EmailIsInvalid"
         case .passwordIsInvalid:
             return "SignUpView.PasswordIsInvalid"
+        case .websiteIsInvalid:
+            return "SignUpView.WebsiteIsInvalid"
         default:
             return ""
         }

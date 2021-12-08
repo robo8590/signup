@@ -56,6 +56,10 @@ extension SignUpViewModel {
     /// The regular expression for password
     static let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{6,200}$"
 
+    /// The url regex
+    static let urlRegex = "https?://(www.)?[-a-zA-Z0-9@:%._+~#=]{1,256}"
+    + ".[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)"
+
     /// Checks the current input is valid or not
     var isCurrentInputValid: Bool {
         switch currentStep {
@@ -106,7 +110,8 @@ extension SignUpViewModel {
         guard !website.isEmpty else {
             return true
         }
-        return true
+        let predicate = NSPredicate(format: "SELF MATCHES %@", SignUpViewModel.urlRegex)
+        return predicate.evaluate(with: website)
     }
 
     /// Trim the first name if it exceed the maximum characters
@@ -174,6 +179,7 @@ extension SignUpViewModel {
     /// Handle event the user is entering the password
     func handleWebsiteOnChange() {
         trimWebsiteIfNeeded()
+        currentError = isWebsiteValid ? nil : .websiteIsInvalid
     }
 
     /// Submit the form to server
