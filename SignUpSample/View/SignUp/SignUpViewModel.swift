@@ -14,6 +14,17 @@ enum SignUpStep {
     case enteringEmail
 }
 
+// MARK: - Define the errors
+enum SignUpError: Error {
+    case firstNameIsInvalid
+    case emailIsInvalid
+    case passwordIsInvalid
+    case websiteIsInvalid
+    case emailIsAlreadyInUse
+    case internalServerError
+    case deviceIsOffline
+}
+
 // MARK: - Define the states
 /// The view model of sign up view
 class SignUpViewModel: ObservableObject {
@@ -23,12 +34,17 @@ class SignUpViewModel: ObservableObject {
     @Published var firstName: String = ""
     /// The email of the user
     @Published var email: String = ""
+    /// The current error of process
+    @Published var currentError: SignUpError?
 }
 
 // MARK: - Input Validation
 extension SignUpViewModel {
     /// The maximum character
     static let maxChars = 200
+
+    /// The regular expression for email
+    static let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
     /// Checks the current input is valid or not
     var isCurrentInputValid: Bool {
@@ -53,7 +69,8 @@ extension SignUpViewModel {
         guard !email.isEmpty else {
             return false
         }
-        return true
+        let predicate = NSPredicate(format: "SELF MATCHES %@", SignUpViewModel.emailRegex)
+        return predicate.evaluate(with: email)
     }
 
     /// Trim the first name if it exceed the maximum characters
@@ -76,6 +93,13 @@ extension SignUpViewModel {
             currentStep = .enteringEmail
         case .enteringEmail:
             break
+        }
+    }
+
+    /// Handle event the user is entering the email
+    func handleEmailOnChange() {
+        if !isEmailValid {
+            currentError = .emailIsInvalid
         }
     }
 }

@@ -4,30 +4,88 @@
 //
 //  Created by Nam Tran on 12/5/21.
 //
+//
+//  US1 - User story 1 : Sign Up
+//
+//  As a guest user,
+//  I want to create my account
+//  so that I can login to the system.
+//
+//  Entering the email
+//
+//  US1-S4 - Scenario 4: The email is invalid.
+//
+//  Given I started the sign up wizard
+//  and I went to the step to enter the email
+//  and the email text field was focused on
+//  and the keyboard was presented
+//  when I enter an invalid email
+//  then the error message "The email is invalid" is showed
+//  and the next button are still disabled.
+//
 
 import XCTest
 
-class US1S4EmailIsInvalidUITests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class US1S4EmailIsInvalidUITests: US1SignUpXCTestCase {
+    func testScenario() throws {
+        // Given
+        firstNameField.typeText("Nam Tran")
+        nextButton.tap()
+        XCTAssertTrue(emailField.exists)
+        XCTAssertEqual(emailField.value(forKey: "hasKeyboardFocus") as? Bool, true)
+        XCTAssertTrue(nextButton.exists)
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+        // When
+        emailField.typeText("robo8590")
 
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        // Then
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, "The email is invalid.")
+        XCTAssertFalse(nextButton.isEnabled)
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
+        // When
+        emailField.clearText()
+        emailField.typeText("robo8590@gmail")
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        // Then
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, "The email is invalid.")
+        XCTAssertFalse(nextButton.isEnabled)
 
-    func testExample() throws {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // When
+        emailField.clearText()
+        emailField.typeText("robo$8590@gmail.com")
+
+        // Then
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, "The email is invalid.")
+        XCTAssertFalse(nextButton.isEnabled)
+
+        // When
+        emailField.clearText()
+        emailField.typeText("robo%8-5+9.0@gm*ail.com")
+
+        // Then
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, "The email is invalid.")
+        XCTAssertFalse(nextButton.isEnabled)
+
+        // When
+        emailField.clearText()
+        emailField.typeText("robo%8-5+9.0@gm.ai-9l.c")
+
+        // Then
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, "The email is invalid.")
+        XCTAssertFalse(nextButton.isEnabled)
+
+        // When
+        emailField.clearText()
+        emailField.typeText("robo%8-5+9.0@gm.ai-9l.com3")
+
+        // Then
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, "The email is invalid.")
+        XCTAssertFalse(nextButton.isEnabled)
     }
 }

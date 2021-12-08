@@ -33,6 +33,9 @@ struct SignUpView: View {
                     nextButton
                 case .enteringEmail:
                     emailTextField
+                    if viewModel.currentError != nil {
+                        errorText
+                    }
                     Spacer()
                     nextButton
                 }
@@ -111,11 +114,15 @@ extension SignUpView {
             TextField("", text: $viewModel.email)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
+                .keyboardType(.emailAddress)
                 .accessibilityIdentifier("EmailField")
                 .onSubmit(next)
                 .focused($focusedField, equals: .email)
                 .task {
                     focusedField = .email
+                }
+                .onChange(of: viewModel.email) { _ in
+                    viewModel.handleEmailOnChange()
                 }
         }
         .transition(
@@ -125,6 +132,24 @@ extension SignUpView {
             )
         )
         .padding(.top)
+    }
+}
+// MARK: - Error Message
+extension SignUpView {
+    var errorText: some View {
+        return Text(LocalizedStringKey(errorStringKey))
+            .foregroundColor(.red)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityIdentifier("ErrorLabel")
+    }
+
+    var errorStringKey: String {
+        switch viewModel.currentError {
+        case .emailIsInvalid:
+            return "SignUpView.EmailIsInvalid"
+        default:
+            return ""
+        }
     }
 }
 // MARK: - Buttons

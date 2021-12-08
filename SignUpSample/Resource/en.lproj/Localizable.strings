@@ -11,3 +11,4 @@
 "SignUpView.FirstNameTextField.Title" = "First Name";
 "SignUpView.EmailTextField.Title" = "Email";
 "SignUpView.NextButton.Title" = "Next";
+"SignUpView.EmailIsInvalid" = "The email is invalid.";

@@ -23,6 +23,7 @@ class US1SignUpXCTestCase: XCTestCase {
     var emailLabel: XCUIElement!
     var emailField: XCUIElement!
     var nextButton: XCUIElement!
+    var errorLabel: XCUIElement!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -40,5 +41,6 @@ class US1SignUpXCTestCase: XCTestCase {
         emailLabel = app.staticTexts["EmailLabel"]
         emailField = app.textFields["EmailField"]
         nextButton = app.buttons["NextButton"]
+        errorLabel = app.staticTexts["ErrorLabel"]
     }
 }
