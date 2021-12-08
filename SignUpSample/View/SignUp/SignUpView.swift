@@ -27,7 +27,9 @@ struct SignUpView: View {
         NavigationView {
             VStack {
                 titleText
-                instructionText
+                if viewModel.currentStep != .viewingTermOfUse {
+                    instructionText
+                }
                 switch viewModel.currentStep {
                 case .enteringFirstName:
                     firstNameTextField
@@ -37,12 +39,18 @@ struct SignUpView: View {
                     passwordTextField
                 case .enteringWebsite:
                     websiteField
+                case .viewingTermOfUse:
+                    termOfUseView
                 }
-                if viewModel.currentError != nil {
-                    errorText
+                if viewModel.currentStep == .viewingTermOfUse {
+                    submitButton
+                } else {
+                    if viewModel.currentError != nil {
+                        errorText
+                    }
+                    Spacer()
+                    nextButton
                 }
-                Spacer()
-                nextButton
             }
             .padding()
             .navigationBarHidden(true)
@@ -206,6 +214,26 @@ extension SignUpView {
         .padding(.top)
     }
 }
+// MARK: - Term Of Use View
+extension SignUpView {
+    var termOfUseView: some View {
+        VStack {
+            Text("SignUpView.TermOfUse.Title")
+                .foregroundColor(.darkGray)
+                .fontWeight(.semibold)
+                .accessibilityIdentifier("TermOfUseTitleLabel")
+            ScrollView {
+                VStack {
+                    Text("SignUpView.TermOfUse")
+                        .lineLimit(nil)
+                        .accessibilityIdentifier("TermOfUseView")
+                }
+                .frame(maxWidth: .infinity)
+            }
+        }
+        .padding(.top, 1)
+    }
+}
 // MARK: - Error Message
 extension SignUpView {
     var errorText: some View {
@@ -239,6 +267,19 @@ extension SignUpView {
             .disabled(!viewModel.isCurrentInputValid)
             .buttonStyle(RedButtonStyle())
             .accessibilityIdentifier("NextButton")
+        }
+    }
+
+    var submitButton: some View {
+        HStack {
+            Spacer()
+            Button(action: viewModel.submit) {
+                Text("SignUpView.SubmitButton.Title")
+                    .fontWeight(.semibold)
+                    .padding(.horizontal)
+            }
+            .buttonStyle(RedButtonStyle())
+            .accessibilityIdentifier("SubmitButton")
         }
     }
 }

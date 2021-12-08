@@ -26,7 +26,10 @@ class US1SignUpXCTestCase: XCTestCase {
     var passwordField: XCUIElement!
     var websiteLabel: XCUIElement!
     var websiteField: XCUIElement!
+    var termOfUseTitleLabel: XCUIElement!
+    var termOfUseView: XCUIElement!
     var nextButton: XCUIElement!
+    var submitButton: XCUIElement!
     var errorLabel: XCUIElement!
 
     override func setUpWithError() throws {
@@ -48,7 +51,10 @@ class US1SignUpXCTestCase: XCTestCase {
         passwordField = app.secureTextFields["PasswordField"]
         websiteLabel = app.staticTexts["WebsiteLabel"]
         websiteField = app.textFields["WebsiteField"]
+        termOfUseTitleLabel = app.staticTexts["TermOfUseTitleLabel"]
+        termOfUseView = app.staticTexts["TermOfUseView"]
         nextButton = app.buttons["NextButton"]
+        submitButton = app.buttons["SubmitButton"]
         errorLabel = app.staticTexts["ErrorLabel"]
     }
 }

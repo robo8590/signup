@@ -14,6 +14,7 @@ enum SignUpStep {
     case enteringEmail
     case enteringPassword
     case enteringWebsite
+    case viewingTermOfUse
 }
 
 // MARK: - Define the errors
@@ -66,6 +67,8 @@ extension SignUpViewModel {
             return isPasswordValid
         case .enteringWebsite:
             return isWebsiteValid
+        case .viewingTermOfUse:
+            return true
         }
     }
 
@@ -100,6 +103,9 @@ extension SignUpViewModel {
 
     /// Checks the website is valid or not
     var isWebsiteValid: Bool {
+        guard !website.isEmpty else {
+            return true
+        }
         return true
     }
 
@@ -140,6 +146,8 @@ extension SignUpViewModel {
         case .enteringPassword:
             currentStep = .enteringWebsite
         case .enteringWebsite:
+            currentStep = .viewingTermOfUse
+        case .viewingTermOfUse:
             break
         }
     }
@@ -158,5 +166,9 @@ extension SignUpViewModel {
 
     /// Handle event the user is entering the password
     func handleWebsiteOnChange() {
+    }
+
+    /// Submit the form to server
+    func submit() {
     }
 }
