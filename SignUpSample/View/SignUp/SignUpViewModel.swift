@@ -74,6 +74,9 @@ extension SignUpViewModel {
         guard !email.isEmpty else {
             return false
         }
+        guard email.count <= SignUpViewModel.maxChars else {
+            return false
+        }
         let predicate = NSPredicate(format: "SELF MATCHES %@", SignUpViewModel.emailRegex)
         return predicate.evaluate(with: email)
     }
@@ -82,6 +85,13 @@ extension SignUpViewModel {
     func trimFirstNameIfNeeded() {
         if firstName.count > SignUpViewModel.maxChars {
             firstName = String(firstName.prefix(SignUpViewModel.maxChars))
+        }
+    }
+
+    /// Trim the email if it exceed the maximum characters
+    func trimEmailIfNeeded() {
+        if email.count > SignUpViewModel.maxChars {
+            email = String(email.prefix(SignUpViewModel.maxChars))
         }
     }
 }
@@ -105,6 +115,7 @@ extension SignUpViewModel {
 
     /// Handle event the user is entering the email
     func handleEmailOnChange() {
+        trimEmailIfNeeded()
         currentError = isEmailValid ? nil : .emailIsInvalid
     }
 

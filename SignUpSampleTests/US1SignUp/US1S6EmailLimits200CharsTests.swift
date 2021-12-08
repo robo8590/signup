@@ -4,17 +4,47 @@
 //
 //  Created by Nam Tran on 12/5/21.
 //
+//
+//  US1 - User story 1 : Sign Up
+//
+//  As a guest user,
+//  I want to create my account
+//  so that I can login to the system.
+//
+//  Entering the email
+//
+//  US1-S6 - Scenario 6: The email limits 200 characters.
+//
+//  Given I started the sign up wizard
+//  and I went to the step to enter the email
+//  and the email text field was focused on
+//  and the keyboard was presented
+//  when I enter more than 200 characters
+//  then the email field only accepts 200 characters.
+//
 
 import XCTest
+@testable import SignUpSample
 
 class US1S6EmailLimits200CharsTests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func testViewModel() {
+        let viewModel = SignUpViewModel()
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // Given
+        viewModel.firstName = "Nam Tran"
+        viewModel.currentStep = .enteringEmail
+        XCTAssertEqual(viewModel.email, "")
+        XCTAssertFalse(viewModel.isCurrentInputValid)
+
+        // When
+        let input = "robo8590robo8590robo8590robo8590robo8590robo8590robo8590robo8590"
+        + "robo8590robo8590robo8590robo8590robo8590robo8590robo8590robo8590robo8590"
+        + "@gmailgmailgmailgmailgmailgmailgmailgmailgmailgmail.commmmmmmmmmmmmmmmm"
+        viewModel.email = input
+        viewModel.handleEmailOnChange()
+
+        // Then
+        XCTAssertEqual(viewModel.email, String(input.prefix(200)))
+        XCTAssertEqual(viewModel.isCurrentInputValid, true)
     }
 }
