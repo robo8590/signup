@@ -13,6 +13,7 @@ enum SignUpStep {
     case enteringFirstName
     case enteringEmail
     case enteringPassword
+    case enteringWebsite
 }
 
 // MARK: - Define the errors
@@ -37,6 +38,8 @@ class SignUpViewModel: ObservableObject {
     @Published var email: String = ""
     /// The password of the user
     @Published var password: String = ""
+    /// The website of the user
+    @Published var website: String = ""
     /// The current error of process
     @Published var currentError: SignUpError?
 }
@@ -61,6 +64,8 @@ extension SignUpViewModel {
             return isEmailValid
         case .enteringPassword:
             return isPasswordValid
+        case .enteringWebsite:
+            return isWebsiteValid
         }
     }
 
@@ -93,6 +98,11 @@ extension SignUpViewModel {
         return predicate.evaluate(with: password)
     }
 
+    /// Checks the website is valid or not
+    var isWebsiteValid: Bool {
+        return true
+    }
+
     /// Trim the first name if it exceed the maximum characters
     func trimFirstNameIfNeeded() {
         if firstName.count > SignUpViewModel.maxChars {
@@ -121,6 +131,8 @@ extension SignUpViewModel {
         case .enteringEmail:
             currentStep = .enteringPassword
         case .enteringPassword:
+            currentStep = .enteringWebsite
+        case .enteringWebsite:
             break
         }
     }
@@ -134,5 +146,9 @@ extension SignUpViewModel {
     /// Handle event the user is entering the password
     func handlePasswordOnChange() {
         currentError = isPasswordValid ? nil : .passwordIsInvalid
+    }
+
+    /// Handle event the user is entering the password
+    func handleWebsiteOnChange() {
     }
 }

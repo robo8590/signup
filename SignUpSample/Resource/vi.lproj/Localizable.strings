@@ -11,6 +11,7 @@
 "SignUpView.FirstNameTextField.Title" = "Tên";
 "SignUpView.EmailTextField.Title" = "Thư điện tử";
 "SignUpView.PasswordField.Title" = "Mật khẩu";
+"SignUpView.WebsiteField.Title" = "Trang web";
 "SignUpView.NextButton.Title" = "Tiếp";
 "SignUpView.EmailIsInvalid" = "Thư điện tử của bạn không hợp lệ.";
 "SignUpView.PasswordIsInvalid" = "Mật khẩu cần có 6 đến 200 ký tự, 1 ký tự in thường, 1 ký tự in hoa và 1 ký tự đặc biệt.";

@@ -12,6 +12,7 @@ enum SignUpField: Hashable {
     case firstName
     case email
     case password
+    case website
 }
 // MARK: - Layout
 /// The sign up view object
@@ -30,23 +31,18 @@ struct SignUpView: View {
                 switch viewModel.currentStep {
                 case .enteringFirstName:
                     firstNameTextField
-                    Spacer()
-                    nextButton
                 case .enteringEmail:
                     emailTextField
-                    if viewModel.currentError != nil {
-                        errorText
-                    }
-                    Spacer()
-                    nextButton
                 case .enteringPassword:
                     passwordTextField
-                    if viewModel.currentError != nil {
-                        errorText
-                    }
-                    Spacer()
-                    nextButton
+                case .enteringWebsite:
+                    websiteField
                 }
+                if viewModel.currentError != nil {
+                    errorText
+                }
+                Spacer()
+                nextButton
             }
             .padding()
             .navigationBarHidden(true)
@@ -166,6 +162,39 @@ extension SignUpView {
                 }
                 .onChange(of: viewModel.password) { _ in
                     viewModel.handlePasswordOnChange()
+                }
+        }
+        .transition(
+            .asymmetric(
+                insertion: .opacity.combined(with: .move(edge: .trailing)),
+                removal: .opacity.combined(with: .move(edge: .leading))
+            )
+        )
+        .padding(.top)
+    }
+}
+// MARK: - Website Field
+extension SignUpView {
+    var websiteField: some View {
+        ZStack(alignment: .leading) {
+            if viewModel.website.isEmpty {
+                Text("SignUpView.WebsiteField.Title")
+                    .fontWeight(.medium)
+                    .foregroundColor(.darkGray)
+                    .padding()
+                    .accessibilityIdentifier("WebsiteLabel")
+            }
+            TextField("", text: $viewModel.website)
+                .textFieldStyle(RoundedTextFieldStyle())
+                .submitLabel(.next)
+                .accessibilityIdentifier("WebsiteField")
+                .onSubmit(next)
+                .focused($focusedField, equals: .website)
+                .task {
+                    focusedField = .website
+                }
+                .onChange(of: viewModel.website) { _ in
+                    viewModel.handleWebsiteOnChange()
                 }
         }
         .transition(
