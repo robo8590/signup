@@ -129,6 +129,13 @@ extension SignUpViewModel {
             password = String(password.prefix(SignUpViewModel.maxChars))
         }
     }
+
+    /// Trim the website if it exceed the maximum characters
+    func trimWebsiteIfNeeded() {
+        if website.count > SignUpViewModel.maxChars {
+            website = String(website.prefix(SignUpViewModel.maxChars))
+        }
+    }
 }
 
 // MARK: - Actions
@@ -166,6 +173,7 @@ extension SignUpViewModel {
 
     /// Handle event the user is entering the password
     func handleWebsiteOnChange() {
+        trimWebsiteIfNeeded()
     }
 
     /// Submit the form to server
