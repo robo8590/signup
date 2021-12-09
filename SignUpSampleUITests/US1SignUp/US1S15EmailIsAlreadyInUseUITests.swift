@@ -25,27 +25,56 @@
 
 import XCTest
 
-class US1S15EmailIsAlreadyInUseUITests: XCTestCase {
+class US1S15EmailIsAlreadyInUseUITests: US1SignUpXCTestCase {
     override func setUpWithError() throws {
+        var arg = """
+        testing{
+            "state": 0,
+            "delayTime": 1,
+            "accounts": {
+                "robo8590@gmail.com": {
+                    "firstName": "Nam",
+                    "email": "robo8590@gmail.com",
+                    "password": "Nam123!",
+                    "website": "http://www.linkedin.com/in/robo8590"
+                }
+            }
+        }
+        """
+        arg = arg.replacingOccurrences(of: "\n", with: "")
+        arg = arg.replacingOccurrences(of: " ", with: "")
+        args = [arg]
+
         try super.setUpWithError()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testScenario() throws {
+        // Given
+        firstNameField.typeText("Nam")
+        nextButton.tap()
+        emailField.typeText("robo8590@gmail.com")
+        nextButton.tap()
+        passwordField.typeText("Nam123!")
+        nextButton.tap()
+        websiteField.typeText("http://www.linkedin.com/in/robo8590")
+        nextButton.tap()
+        XCTAssertTrue(submitButton.waitForExistence(timeout: 2))
 
-    func testExample() throws {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // When
+        submitButton.tap()
+
+        // Then
+        XCTAssertFalse(titleLabel.exists)
+        XCTAssertFalse(submitButton.exists)
+        XCTAssertFalse(instructionLabel.exists)
+        XCTAssertFalse(termOfUseView.exists)
+        XCTAssertFalse(termOfUseTitleLabel.exists)
+
+        // After that
+        XCTAssertTrue(emailField.waitForExistence(timeout: 2))
+        XCTAssertTrue(errorLabel.exists)
+        XCTAssertEqual(errorLabel.label, "The email is already in use.")
+        XCTAssertTrue(nextButton.exists)
+        XCTAssertTrue(nextButton.isEnabled)
     }
 }

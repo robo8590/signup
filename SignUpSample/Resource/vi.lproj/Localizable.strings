@@ -18,6 +18,8 @@
 "SignUpView.EmailIsInvalid" = "Thư điện tử của bạn không hợp lệ.";
 "SignUpView.PasswordIsInvalid" = "Mật khẩu cần có 6 đến 200 ký tự, 1 ký tự in thường, 1 ký tự in hoa và 1 ký tự đặc biệt.";
 "SignUpView.WebsiteIsInvalid" = "Đường dẫn trang web không hợp lệ.";
+"SignUpView.EmailIsAlreadyInUse" = "Thư điện tử đã được sử dụng.";
+"SignUpView.UnknownError" = "Hãy thử lại sau. Hệ thống đang không thể tạo tài khoản lúc này.";
 "SignUpView.TermOfUse" = "Giấy phép MIT
 
 Bản quyền năm 2021 Nam Tran

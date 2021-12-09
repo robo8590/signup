@@ -26,8 +26,10 @@ struct SignUpView: View {
     var body: some View {
         NavigationView {
             VStack {
-                titleText
-                if viewModel.currentStep != .viewingTermOfUse {
+                if viewModel.currentStep != .submitting {
+                    titleText
+                }
+                if viewModel.currentStep != .viewingTermOfUse && viewModel.currentStep != .submitting {
                     instructionText
                 }
                 switch viewModel.currentStep {
@@ -42,11 +44,11 @@ struct SignUpView: View {
                 case .viewingTermOfUse:
                     termOfUseView
                 case .submitting:
-                    ProgressView()
+                    progressView
                 }
                 if viewModel.currentStep == .viewingTermOfUse {
                     submitButton
-                } else {
+                } else if viewModel.currentStep != .submitting {
                     if viewModel.currentError != nil {
                         errorText
                     }
@@ -253,9 +255,20 @@ extension SignUpView {
             return "SignUpView.PasswordIsInvalid"
         case .websiteIsInvalid:
             return "SignUpView.WebsiteIsInvalid"
+        case .emailIsAlreadyInUse:
+            return "SignUpView.EmailIsAlreadyInUse"
+        case .unknown:
+            return "SignUpView.UnknownError"
         default:
             return ""
         }
+    }
+}
+// MARK: - Progress view
+extension SignUpView {
+    var progressView: some View {
+        ProgressView()
+            .accessibilityIdentifier("ProgressView")
     }
 }
 // MARK: - Buttons

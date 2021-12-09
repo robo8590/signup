@@ -186,11 +186,15 @@ extension SignUpViewModel {
             let account = Account(firstName: firstName, email: email, password: password, website: website)
             try await accountService.signUp(account: account)
         } catch SignUpError.emailIsAlreadyInUse {
-            currentError = .emailIsAlreadyInUse
-            currentStep = .enteringEmail
+            DispatchQueue.main.async {
+                self.currentError = .emailIsAlreadyInUse
+                self.currentStep = .enteringEmail
+            }
         } catch {
-            currentStep = .enteringFirstName
-            currentError = SignUpError.unknown
+            DispatchQueue.main.async {
+                self.currentStep = .enteringFirstName
+                self.currentError = SignUpError.unknown
+            }
             logger.error("App signed up failed with error: \(error.localizedDescription)")
         }
     }

@@ -63,7 +63,9 @@ class US1S15EmailIsAlreadyInUseTests: XCTestCase {
         let account = Account(firstName: firstName, email: email, password: password, website: website)
 
         var accountService = AccountService()
-        accountService.session = MockServer()
+        let mockServer = MockServer()
+        mockServer.serverInfo.delayTime = 0
+        accountService.session = mockServer
 
         // When
         do {

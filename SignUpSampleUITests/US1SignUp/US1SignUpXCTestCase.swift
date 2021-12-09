@@ -15,6 +15,7 @@ import XCTest
 
 // swiftlint:disable implicitly_unwrapped_optional
 class US1SignUpXCTestCase: XCTestCase {
+    var args = ["testing"]
     var app: XCUIApplication!
     var titleLabel: XCUIElement!
     var instructionLabel: XCUIElement!
@@ -31,6 +32,7 @@ class US1SignUpXCTestCase: XCTestCase {
     var nextButton: XCUIElement!
     var submitButton: XCUIElement!
     var errorLabel: XCUIElement!
+    var progressView: XCUIElement!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -38,7 +40,7 @@ class US1SignUpXCTestCase: XCTestCase {
         continueAfterFailure = false
 
         app = XCUIApplication()
-        app.launchArguments = ["testing"]
+        app.launchArguments = args
         app.launch()
 
         titleLabel = app.staticTexts["TitleLabel"]
@@ -56,5 +58,6 @@ class US1SignUpXCTestCase: XCTestCase {
         nextButton = app.buttons["NextButton"]
         submitButton = app.buttons["SubmitButton"]
         errorLabel = app.staticTexts["ErrorLabel"]
+        progressView = app.progressIndicators["ProgressView"]
     }
 }

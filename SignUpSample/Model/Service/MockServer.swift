@@ -42,7 +42,7 @@ class MockServer: URLSessionProtocol {
     init() {
         serverInfo = ServerInfo(
             state: MockServer.good,
-            delayTime: 0,
+            delayTime: 1,
             accounts: [
                 "robo8590@gmail.com": Account(firstName: "Nam", email: "robo8590@gmail.com", password: "Nam12!", website: "")
             ]

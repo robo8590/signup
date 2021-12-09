@@ -18,6 +18,8 @@
 "SignUpView.EmailIsInvalid" = "The email is invalid.";
 "SignUpView.PasswordIsInvalid" = "The password must have 6 to 200 characters, 1 lowercase, 1 uppercase and 1 special character.";
 "SignUpView.WebsiteIsInvalid" = "The website is invalid.";
+"SignUpView.EmailIsAlreadyInUse" = "The email is already in use.";
+"SignUpView.UnknownError" = "Please try it later. The system couldn't create profile this time.";
 "SignUpView.TermOfUse" = "MIT License
 
 Copyright (c) 2021 Nam Tran
