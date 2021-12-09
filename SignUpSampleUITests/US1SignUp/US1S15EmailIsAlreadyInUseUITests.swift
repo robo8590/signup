@@ -71,7 +71,7 @@ class US1S15EmailIsAlreadyInUseUITests: US1SignUpXCTestCase {
         XCTAssertFalse(termOfUseTitleLabel.exists)
 
         // After that
-        XCTAssertTrue(emailField.waitForExistence(timeout: 2))
+        XCTAssertTrue(emailField.waitForExistence(timeout: 5))
         XCTAssertTrue(errorLabel.exists)
         XCTAssertEqual(errorLabel.label, "The email is already in use.")
         XCTAssertTrue(nextButton.exists)

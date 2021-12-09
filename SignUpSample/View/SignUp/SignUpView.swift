@@ -55,6 +55,15 @@ struct SignUpView: View {
                     Spacer()
                     nextButton
                 }
+                NavigationLink(
+                    destination: SignUpConfirmationView(
+                        viewModel: SignUpConfirmationViewModel(viewModel.signedUpAccount)
+                    ),
+                    isActive: $viewModel.isGoingToConfirmationView
+                ) {
+                    EmptyView()
+                }
+                .hidden()
             }
             .padding()
             .navigationBarHidden(true)
@@ -69,7 +78,7 @@ extension SignUpView {
             Text("SignUpView.Title")
                 .font(.system(size: 40, weight: .bold))
                 .foregroundColor(.darkGray)
-                .accessibilityIdentifier("TitleLabel")
+                .accessibilityIdentifier("SignUpView.TitleLabel")
             Spacer()
         }
     }
@@ -81,7 +90,7 @@ extension SignUpView {
             .foregroundColor(.gray)
             .fontWeight(.medium)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .accessibilityIdentifier("InstructionLabel")
+            .accessibilityIdentifier("SignUpView.InstructionLabel")
     }
 }
 // MARK: - First Name Field
@@ -93,16 +102,16 @@ extension SignUpView {
                     .fontWeight(.medium)
                     .foregroundColor(.darkGray)
                     .padding()
-                    .accessibilityIdentifier("FirstNameLabel")
+                    .accessibilityIdentifier("SignUpView.FirstNameLabel")
             }
             TextField("", text: $viewModel.firstName)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
-                .accessibilityIdentifier("FirstNameField")
+                .accessibilityIdentifier("SignUpView.FirstNameField")
                 .onSubmit(next)
                 .focused($focusedField, equals: .firstName)
                 .task {
-                    await Task.sleep(100_000_000)
+                    await Task.sleep(500_000_000)
                     focusedField = .firstName
                 }
                 .onChange(of: viewModel.firstName) { _ in
@@ -127,13 +136,13 @@ extension SignUpView {
                     .fontWeight(.medium)
                     .foregroundColor(.darkGray)
                     .padding()
-                    .accessibilityIdentifier("EmailLabel")
+                    .accessibilityIdentifier("SignUpView.EmailLabel")
             }
             TextField("", text: $viewModel.email)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
                 .keyboardType(.emailAddress)
-                .accessibilityIdentifier("EmailField")
+                .accessibilityIdentifier("SignUpView.EmailField")
                 .onSubmit(next)
                 .focused($focusedField, equals: .email)
                 .task {
@@ -161,12 +170,12 @@ extension SignUpView {
                     .fontWeight(.medium)
                     .foregroundColor(.darkGray)
                     .padding()
-                    .accessibilityIdentifier("PasswordLabel")
+                    .accessibilityIdentifier("SignUpView.PasswordLabel")
             }
             SecureField("", text: $viewModel.password)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
-                .accessibilityIdentifier("PasswordField")
+                .accessibilityIdentifier("SignUpView.PasswordField")
                 .onSubmit(next)
                 .focused($focusedField, equals: .password)
                 .task {
@@ -194,12 +203,12 @@ extension SignUpView {
                     .fontWeight(.medium)
                     .foregroundColor(.darkGray)
                     .padding()
-                    .accessibilityIdentifier("WebsiteLabel")
+                    .accessibilityIdentifier("SignUpView.WebsiteLabel")
             }
             TextField("", text: $viewModel.website)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .submitLabel(.next)
-                .accessibilityIdentifier("WebsiteField")
+                .accessibilityIdentifier("SignUpView.WebsiteField")
                 .onSubmit(next)
                 .focused($focusedField, equals: .website)
                 .task {
@@ -225,12 +234,12 @@ extension SignUpView {
             Text("SignUpView.TermOfUse.Title")
                 .foregroundColor(.darkGray)
                 .fontWeight(.semibold)
-                .accessibilityIdentifier("TermOfUseTitleLabel")
+                .accessibilityIdentifier("SignUpView.TermOfUseTitleLabel")
             ScrollView {
                 VStack {
                     Text("SignUpView.TermOfUse")
                         .lineLimit(nil)
-                        .accessibilityIdentifier("TermOfUseView")
+                        .accessibilityIdentifier("SignUpView.TermOfUseView")
                 }
                 .frame(maxWidth: .infinity)
             }
@@ -244,7 +253,7 @@ extension SignUpView {
         return Text(LocalizedStringKey(errorStringKey))
             .foregroundColor(.red)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .accessibilityIdentifier("ErrorLabel")
+            .accessibilityIdentifier("SignUpView.ErrorLabel")
     }
 
     var errorStringKey: String {
@@ -268,7 +277,7 @@ extension SignUpView {
 extension SignUpView {
     var progressView: some View {
         ProgressView()
-            .accessibilityIdentifier("ProgressView")
+            .accessibilityIdentifier("SignUpView.ProgressView")
     }
 }
 // MARK: - Buttons
@@ -283,7 +292,7 @@ extension SignUpView {
             }
             .disabled(!viewModel.isCurrentInputValid)
             .buttonStyle(RedButtonStyle())
-            .accessibilityIdentifier("NextButton")
+            .accessibilityIdentifier("SignUpView.NextButton")
         }
     }
 
@@ -296,7 +305,7 @@ extension SignUpView {
                     .padding(.horizontal)
             }
             .buttonStyle(RedButtonStyle())
-            .accessibilityIdentifier("SubmitButton")
+            .accessibilityIdentifier("SignUpView.SubmitButton")
         }
     }
 }

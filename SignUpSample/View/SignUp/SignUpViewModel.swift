@@ -34,6 +34,11 @@ class SignUpViewModel: ObservableObject {
     @Published var website: String = ""
     /// The current error of process
     @Published var currentError: SignUpError?
+    /// This state controls pushing to confirmation view
+    @Published var isGoingToConfirmationView = false
+
+    /// The account that signed up successfully
+    var signedUpAccount = Account(firstName: "", email: "", password: "", website: "")
 
     /// The account service object
     var accountService: AccountServiceProtocol = AccountService()
@@ -185,13 +190,17 @@ extension SignUpViewModel {
         do {
             let account = Account(firstName: firstName, email: email, password: password, website: website)
             try await accountService.signUp(account: account)
+            await MainActor.run {
+                self.signedUpAccount = account
+                self.isGoingToConfirmationView = true
+            }
         } catch SignUpError.emailIsAlreadyInUse {
-            DispatchQueue.main.async {
+            await MainActor.run {
                 self.currentError = .emailIsAlreadyInUse
                 self.currentStep = .enteringEmail
             }
         } catch {
-            DispatchQueue.main.async {
+            await MainActor.run {
                 self.currentStep = .enteringFirstName
                 self.currentError = SignUpError.unknown
             }

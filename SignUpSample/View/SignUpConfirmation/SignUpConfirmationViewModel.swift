@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class SignUpConfirmationViewModel: ObservableObject {
+    var account: Account
+
+    init(_ account: Account) {
+        self.account = account
+    }
+}

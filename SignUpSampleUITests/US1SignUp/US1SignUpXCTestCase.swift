@@ -33,6 +33,12 @@ class US1SignUpXCTestCase: XCTestCase {
     var submitButton: XCUIElement!
     var errorLabel: XCUIElement!
     var progressView: XCUIElement!
+    var confirmViewLoginButton: XCUIElement!
+    var confirmViewWelcomeLabel: XCUIElement!
+    var confirmViewMessageLabel: XCUIElement!
+    var confirmViewEmailLabel: XCUIElement!
+    var confirmViewNameLabel: XCUIElement!
+    var confirmViewWebsiteLink: XCUIElement!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -43,21 +49,27 @@ class US1SignUpXCTestCase: XCTestCase {
         app.launchArguments = args
         app.launch()
 
-        titleLabel = app.staticTexts["TitleLabel"]
-        instructionLabel = app.staticTexts["InstructionLabel"]
-        firstNameLabel = app.staticTexts["FirstNameLabel"]
-        firstNameField = app.textFields["FirstNameField"]
-        emailLabel = app.staticTexts["EmailLabel"]
-        emailField = app.textFields["EmailField"]
-        passwordLabel = app.staticTexts["PasswordLabel"]
-        passwordField = app.secureTextFields["PasswordField"]
-        websiteLabel = app.staticTexts["WebsiteLabel"]
-        websiteField = app.textFields["WebsiteField"]
-        termOfUseTitleLabel = app.staticTexts["TermOfUseTitleLabel"]
-        termOfUseView = app.staticTexts["TermOfUseView"]
-        nextButton = app.buttons["NextButton"]
-        submitButton = app.buttons["SubmitButton"]
-        errorLabel = app.staticTexts["ErrorLabel"]
-        progressView = app.progressIndicators["ProgressView"]
+        titleLabel = app.staticTexts["SignUpView.TitleLabel"]
+        instructionLabel = app.staticTexts["SignUpView.InstructionLabel"]
+        firstNameLabel = app.staticTexts["SignUpView.FirstNameLabel"]
+        firstNameField = app.textFields["SignUpView.FirstNameField"]
+        emailLabel = app.staticTexts["SignUpView.EmailLabel"]
+        emailField = app.textFields["SignUpView.EmailField"]
+        passwordLabel = app.staticTexts["SignUpView.PasswordLabel"]
+        passwordField = app.secureTextFields["SignUpView.PasswordField"]
+        websiteLabel = app.staticTexts["SignUpView.WebsiteLabel"]
+        websiteField = app.textFields["SignUpView.WebsiteField"]
+        termOfUseTitleLabel = app.staticTexts["SignUpView.TermOfUseTitleLabel"]
+        termOfUseView = app.staticTexts["SignUpView.TermOfUseView"]
+        nextButton = app.buttons["SignUpView.NextButton"]
+        submitButton = app.buttons["SignUpView.SubmitButton"]
+        errorLabel = app.staticTexts["SignUpView.ErrorLabel"]
+        progressView = app.otherElements["SignUpView.ProgressView"]
+        confirmViewLoginButton = app.buttons["SignUpConfirmationView.LoginButton"]
+        confirmViewWelcomeLabel = app.staticTexts["SignUpConfirmationView.WelcomeLabel"]
+        confirmViewEmailLabel = app.staticTexts["SignUpConfirmationView.EmailLabel"]
+        confirmViewNameLabel = app.staticTexts["SignUpConfirmationView.NameLabel"]
+        confirmViewWebsiteLink = app.buttons["SignUpConfirmationView.WebsiteLinkButton"]
+        confirmViewMessageLabel = app.staticTexts["SignUpConfirmationView.MessageLabel"]
     }
 }

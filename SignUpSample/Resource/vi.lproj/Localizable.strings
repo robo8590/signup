@@ -5,7 +5,7 @@
   Created by Nam Tran on 12/5/21.
   
 */
-// SignUpView
+// MARK: - SignUpView
 "SignUpView.Title" = "Tạo tài khoản";
 "SignUpView.Instruction" = "Sử dụng biểu mẫu dưới đây để tạo hồ sơ của bạn. Thư điện tử và mật khẩu là trường bắt buộc.";
 "SignUpView.FirstNameTextField.Title" = "Tên";
@@ -29,3 +29,8 @@ Quyền theo đây được cấp miễn phí cho bất kỳ người nào có �
 Thông báo bản quyền ở trên và thông báo cho phép này sẽ được bao gồm trong tất cả bản sao hoặc các phần quan trọng của Phần mềm.
 
 PHẦN MỀM ĐƯỢC CUNG CẤP \"NGUYÊN TRẠNG\", KHÔNG ĐƯỢC BẢO HÀNH BẤT KỲ HÌNH THỨC NÀO, RÕ RÀNG HOẶC NGỤ Ý, BAO GỒM NHƯNG KHÔNG GIỚI HẠN ĐẢM BẢO VỀ KHẢ NĂNG LAO ĐỘNG, PHÙ HỢP VỚI MỤC ĐÍCH CỤ THỂ VÀ KHÔNG HỢP LỆ. TRONG MỌI TRƯỜNG HỢP SẼ KHÔNG CÓ TÁC GIẢ HOẶC CHỦ BẢN QUYỀN CHỊU TRÁCH NHIỆM VỀ BẤT KỲ KHIẾU NẠI, THIỆT HẠI HOẶC TRÁCH NHIỆM PHÁP LÝ KHÁC NÀO TRONG MỘT HÀNH VI HỢP ĐỒNG, KHAI THÁC HOẶC CÁCH KHÁC, PHÁT SINH TỪ, NGOÀI HOẶC KẾT NỐI VỚI PHẦN MỀM HOẶC VIỆC SỬ DỤNG HOẶC KINH DOANH KHÁC TRONG PHẦN MỀM.";
+
+// MARK: - SignUpConfirmationView
+"SignUpConfirmationView.WelcomeLabel %@!" = "Xin chào %@!";
+"SignUpConfirmationView.LoginButton.Title" = "Login";
+"SignUpConfirmationView.MessageLabel" = "Tài khoản của bạn đã được tạo thành công! Thông tin dưới đây sẽ được hiện thị trên cộng đồng của bạn!";
