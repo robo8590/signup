@@ -40,7 +40,6 @@ The details server API is on the Wiki page at this link [Server API](https://git
 |US2-S1 - Scenario 1: Light mode.|No|No|Yes|
 |US2-S2 - Scenario 2: Dark mode.|No|No|Yes|
 |US2-S3 - Scenario 3: Set Light/Dark automatically: Dark mode.|No|No|Yes|
-|US2-S3 - Scenario 3: Set Light/Dark automatically: Dark mode.|No|No|Yes|
 |US3-S1 - Scenario 1: Preferred language is English.|No|No|Yes|
 |US3-S2 - Scenario 2: Preferred language is Vietnamese.|No|No|Yes|
 
