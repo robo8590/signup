@@ -11,6 +11,12 @@
 		9114E2E4275E829B005CBFCC /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */; };
 		9114E2E6275E8CA7005CBFCC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E5275E8CA7005CBFCC /* Colors.swift */; };
 		9114E2E8275E944D005CBFCC /* RedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */; };
+		911EBD5A276169E4009199EE /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EBD59276169E3009199EE /* Account.swift */; };
+		911EBD5E27619040009199EE /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EBD5D27619040009199EE /* URLSession.swift */; };
+		911EBD602761B3F5009199EE /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EBD5F2761B3F5009199EE /* SignUpResponse.swift */; };
+		911EBD622761B817009199EE /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EBD612761B817009199EE /* URLRequest.swift */; };
+		911EBD642761BCDA009199EE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EBD632761BCDA009199EE /* Config.swift */; };
+		911EBD662761D4EE009199EE /* MockServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EBD652761D4EE009199EE /* MockServer.swift */; };
 		913A84102760177E00E5BF90 /* US1SignUpXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A840F2760177E00E5BF90 /* US1SignUpXCTestCase.swift */; };
 		913A841327604F5700E5BF90 /* XCUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A841227604F5700E5BF90 /* XCUIElementExtension.swift */; };
 		91617CD8275D3A7500DDB972 /* SignUpSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91617CD7275D3A7500DDB972 /* SignUpSampleApp.swift */; };
@@ -84,6 +90,12 @@
 		9114E2E3275E829B005CBFCC /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
 		9114E2E5275E8CA7005CBFCC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9114E2E7275E944D005CBFCC /* RedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButtonStyle.swift; sourceTree = "<group>"; };
+		911EBD59276169E3009199EE /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		911EBD5D27619040009199EE /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		911EBD5F2761B3F5009199EE /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		911EBD612761B817009199EE /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		911EBD632761BCDA009199EE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		911EBD652761D4EE009199EE /* MockServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServer.swift; sourceTree = "<group>"; };
 		913A840F2760177E00E5BF90 /* US1SignUpXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US1SignUpXCTestCase.swift; sourceTree = "<group>"; };
 		913A841227604F5700E5BF90 /* XCUIElementExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIElementExtension.swift; sourceTree = "<group>"; };
 		91617CD4275D3A7500DDB972 /* SignUpSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +183,15 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
+		911EBD582761693A009199EE /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				911EBD59276169E3009199EE /* Account.swift */,
+				911EBD5F2761B3F5009199EE /* SignUpResponse.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		913A841127604F2F00E5BF90 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				91617D06275D6AFF00DDB972 /* Common */,
+				911EBD582761693A009199EE /* DataModel */,
 				91617D07275D6B0800DDB972 /* Service */,
 			);
 			path = Model;
@@ -260,6 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				91617D11275D6D3200DDB972 /* NetworkStatus.swift */,
+				911EBD5D27619040009199EE /* URLSession.swift */,
+				911EBD612761B817009199EE /* URLRequest.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -268,6 +292,8 @@
 			isa = PBXGroup;
 			children = (
 				91617D13275D6D4100DDB972 /* AccountService.swift */,
+				911EBD632761BCDA009199EE /* Config.swift */,
+				911EBD652761D4EE009199EE /* MockServer.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -539,12 +565,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				91617CDA275D3A7500DDB972 /* SignUpView.swift in Sources */,
+				911EBD622761B817009199EE /* URLRequest.swift in Sources */,
+				911EBD642761BCDA009199EE /* Config.swift in Sources */,
+				911EBD5A276169E4009199EE /* Account.swift in Sources */,
+				911EBD5E27619040009199EE /* URLSession.swift in Sources */,
 				9114E2E6275E8CA7005CBFCC /* Colors.swift in Sources */,
 				9114E2E4275E829B005CBFCC /* RoundedTextFieldStyle.swift in Sources */,
+				911EBD602761B3F5009199EE /* SignUpResponse.swift in Sources */,
 				9114E2E8275E944D005CBFCC /* RedButtonStyle.swift in Sources */,
 				91617D0E275D6CBD00DDB972 /* SignUpConfirmationView.swift in Sources */,
 				91617D09275D6BA500DDB972 /* SignUpViewModel.swift in Sources */,
 				91617CD8275D3A7500DDB972 /* SignUpSampleApp.swift in Sources */,
+				911EBD662761D4EE009199EE /* MockServer.swift in Sources */,
 				91617D14275D6D4100DDB972 /* AccountService.swift in Sources */,
 				91617D12275D6D3200DDB972 /* NetworkStatus.swift in Sources */,
 				91617D10275D6CF600DDB972 /* SignUpConfirmationViewModel.swift in Sources */,

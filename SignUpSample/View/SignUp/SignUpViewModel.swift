@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os.log
 
 // MARK: - Define the steps
 /// The step of sign up process
@@ -15,20 +16,10 @@ enum SignUpStep {
     case enteringPassword
     case enteringWebsite
     case viewingTermOfUse
+    case submitting
 }
 
-// MARK: - Define the errors
-enum SignUpError: Error {
-    case firstNameIsInvalid
-    case emailIsInvalid
-    case passwordIsInvalid
-    case websiteIsInvalid
-    case emailIsAlreadyInUse
-    case internalServerError
-    case deviceIsOffline
-}
-
-// MARK: - Define the states
+// MARK: - Define the states and dependency services
 /// The view model of sign up view
 class SignUpViewModel: ObservableObject {
     /// The current step of sign up process
@@ -43,6 +34,12 @@ class SignUpViewModel: ObservableObject {
     @Published var website: String = ""
     /// The current error of process
     @Published var currentError: SignUpError?
+
+    /// The account service object
+    var accountService: AccountServiceProtocol = AccountService()
+
+    /// The logger object
+    var logger = Logger()
 }
 
 // MARK: - Input Validation
@@ -71,7 +68,7 @@ extension SignUpViewModel {
             return isPasswordValid
         case .enteringWebsite:
             return isWebsiteValid
-        case .viewingTermOfUse:
+        case .viewingTermOfUse, .submitting:
             return true
         }
     }
@@ -159,7 +156,7 @@ extension SignUpViewModel {
             currentStep = .enteringWebsite
         case .enteringWebsite:
             currentStep = .viewingTermOfUse
-        case .viewingTermOfUse:
+        case .viewingTermOfUse, .submitting:
             break
         }
     }
@@ -183,6 +180,18 @@ extension SignUpViewModel {
     }
 
     /// Submit the form to server
-    func submit() {
+    func submit() async {
+        currentStep = .submitting
+        do {
+            let account = Account(firstName: firstName, email: email, password: password, website: website)
+            try await accountService.signUp(account: account)
+        } catch SignUpError.emailIsAlreadyInUse {
+            currentError = .emailIsAlreadyInUse
+            currentStep = .enteringEmail
+        } catch {
+            currentStep = .enteringFirstName
+            currentError = SignUpError.unknown
+            logger.error("App signed up failed with error: \(error.localizedDescription)")
+        }
     }
 }

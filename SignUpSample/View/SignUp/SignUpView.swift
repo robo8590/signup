@@ -41,6 +41,8 @@ struct SignUpView: View {
                     websiteField
                 case .viewingTermOfUse:
                     termOfUseView
+                case .submitting:
+                    ProgressView()
                 }
                 if viewModel.currentStep == .viewingTermOfUse {
                     submitButton
@@ -275,7 +277,7 @@ extension SignUpView {
     var submitButton: some View {
         HStack {
             Spacer()
-            Button(action: viewModel.submit) {
+            Button(action: submit) {
                 Text("SignUpView.SubmitButton.Title")
                     .fontWeight(.semibold)
                     .padding(.horizontal)
@@ -290,6 +292,12 @@ extension SignUpView {
     func next() {
         withAnimation {
             viewModel.next()
+        }
+    }
+
+    func submit() {
+        Task {
+            await viewModel.submit()
         }
     }
 }

@@ -4,6 +4,24 @@
 //
 //  Created by Nam Tran on 12/5/21.
 //
+//
+//  US1 - User story 1 : Sign Up
+//
+//  As a guest user,
+//  I want to create my account
+//  so that I can login to the system.
+//
+//  Submitting
+//
+//  US1-S15 - Scenario 15: The email is already in use.
+//
+//  Given I submitted the sign up form
+//  and the loading indicator is showing
+//  when the app receive error about "The email is already in use"
+//  then the email field is showed
+//  and the error message "The email is already in use" is showed
+//  and the loading indicator is hiding.
+//
 
 import XCTest
 
